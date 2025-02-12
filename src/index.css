@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  font-family: 'Noto Serif', serif;
+  font-family: "Noto Serif", serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -13,4 +13,10 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+  .clip-path-triangle {
+    clip-path: polygon(100% 100%, 0% 100%, 100% 0%);
+  }
 }
