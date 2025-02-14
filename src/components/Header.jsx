@@ -1,5 +1,7 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
+import logo from "../assets/images/logo.png";
+import submenu from "../assets/images/submenu.jpg";
 
 const Header = () => {
   return (
@@ -59,46 +61,129 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="bg-black py-4 text-white">
+      <div className="bg-black text-white">
         <div className="container mx-auto flex items-center justify-between px-80">
-          <div className="flex flex-col items-center justify-center text-2xl font-bold text-yellow-500">
-            <span className="block">WINE</span>
-            <span className="block">HOUSE</span>
+          <div className="flex flex-col items-center justify-center py-2 text-2xl font-bold text-yellow-500">
+            <img src={logo} alt="Logo" className="h-24" />
           </div>
 
-          <nav>
-            <ul className="flex h-full space-x-10 text-xs">
-              <li className="hover:text-yellow-500">
+          <nav className="h-28">
+            <ul className="flex h-full space-x-8 text-xs">
+              <li className="flex h-full items-center hover:text-yellow-500">
                 <a href="#" className="tracking-wider uppercase">
                   Trang chủ
                 </a>
               </li>
-              <li className="hover:text-yellow-500">
+              <li className="group relative flex h-full items-center hover:text-yellow-500">
                 <a href="#" className="tracking-wider uppercase">
                   Rượu vang đỏ
                 </a>
+                {/* Submenu with 5-column grid */}
+                <div className="absolute top-full -left-40 z-20 hidden w-[800px] grid-cols-5 gap-4 border border-yellow-500 bg-white p-6 text-black group-hover:grid">
+                  {/* Category Columns (3 columns) */}
+                  <div>
+                    <h3 className="mb-2 font-bold uppercase">Rượu ngoại</h3>
+                    <ul className="space-y-2 text-gray-600">
+                      <li className="hover:text-yellow-500">
+                        <a href="#">Rượu Chivas</a>
+                      </li>
+                      <li className="hover:text-yellow-500">
+                        <a href="#">Hàng độc - Rượu độc đáo</a>
+                      </li>
+                      <li className="hover:text-yellow-500">
+                        <a href="#">Johnnie Walker</a>
+                      </li>
+                      <li className="hover:text-yellow-500">
+                        <a href="#">Rượu Whisky</a>
+                      </li>
+                      <li className="hover:text-yellow-500">
+                        <a href="#">Rượu Remy Martin</a>
+                      </li>
+                      <li className="hover:text-yellow-500">
+                        <a href="#">Rượu Glenmorangie</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="mb-2 font-bold uppercase">Rượu vang</h3>
+                    <ul className="space-y-2 text-gray-600">
+                      <li className="hover:text-yellow-500">
+                        <a href="#">Rượu Chivas</a>
+                      </li>
+                      <li className="hover:text-yellow-500">
+                        <a href="#">Hàng độc - Rượu độc đáo</a>
+                      </li>
+                      <li className="hover:text-yellow-500">
+                        <a href="#">Johnnie Walker</a>
+                      </li>
+                      <li className="hover:text-yellow-500">
+                        <a href="#">Rượu Whisky</a>
+                      </li>
+                      <li className="hover:text-yellow-500">
+                        <a href="#">Rượu Remy Martin</a>
+                      </li>
+                      <li className="hover:text-yellow-500">
+                        <a href="#">Rượu Glenmorangie</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="mb-2 font-bold uppercase">Rượu ngoại</h3>
+                    <ul className="space-y-2 text-gray-600">
+                      <li className="hover:text-yellow-500">
+                        <a href="#">Rượu Chivas</a>
+                      </li>
+                      <li className="hover:text-yellow-500">
+                        <a href="#">Hàng độc - Rượu độc đáo</a>
+                      </li>
+                      <li className="hover:text-yellow-500">
+                        <a href="#">Johnnie Walker</a>
+                      </li>
+                      <li className="hover:text-yellow-500">
+                        <a href="#">Rượu Whisky</a>
+                      </li>
+                      <li className="hover:text-yellow-500">
+                        <a href="#">Rượu Remy Martin</a>
+                      </li>
+                      <li className="hover:text-yellow-500">
+                        <a href="#">Rượu Glenmorangie</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Image Columns (col-span-2) */}
+                  <div className="col-span-2 flex flex-col items-center">
+                    <img
+                      src={submenu}
+                      alt="Submenu"
+                      className="h-40 w-full object-cover"
+                    />
+                  </div>
+                </div>
+                {/* Triangle */}
+                <div className="absolute bottom-0 left-1/2 h-0 w-0 -translate-x-1/2 transform border-r-8 border-b-8 border-l-8 border-r-transparent border-b-yellow-500 border-l-transparent opacity-0 group-hover:opacity-100"></div>
               </li>
-              <li className="hover:text-yellow-500">
+              <li className="flex h-full items-center hover:text-yellow-500">
                 <a href="#" className="tracking-wider uppercase">
                   Rượu trắng
                 </a>
               </li>
-              <li className="hover:text-yellow-500">
+              <li className="flex h-full items-center hover:text-yellow-500">
                 <a href="#" className="tracking-wider uppercase">
                   Champagne
                 </a>
               </li>
-              <li className="hover:text-yellow-500">
+              <li className="flex h-full items-center hover:text-yellow-500">
                 <a href="#" className="tracking-wider uppercase">
                   Thông tin
                 </a>
               </li>
-              <li className="hover:text-yellow-500">
+              <li className="flex h-full items-center hover:text-yellow-500">
                 <a href="#" className="tracking-wider uppercase">
                   Blog
                 </a>
               </li>
-              <li className="hover:text-yellow-500">
+              <li className="flex h-full items-center hover:text-yellow-500">
                 <a href="#" className="tracking-wider uppercase">
                   Liên hệ
                 </a>
