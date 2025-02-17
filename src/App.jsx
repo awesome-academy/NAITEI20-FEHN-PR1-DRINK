@@ -1,16 +1,8 @@
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import PopUp from "./components/PopUp";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   return (
-    <>
-      <Header />
-      <Home />
-      <PopUp/>
-      <Footer />
-    </>
+    <AppRoutes />
   );
 }
 

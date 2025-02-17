@@ -17,7 +17,7 @@ const ProductCardLarge = ({ image, name, price, description }) => {
       <div className="w-96">
         {/* Product Info */}
         <div className="text-left">
-          <p className="text-xl font-medium text-gray-800 group-hover:text-yellow-500">{name}</p>
+          <p className="text-xl font-medium text-gray-800 group-hover:text-yellow-500 uppercase">{name}</p>
           <div className="mt-1">
             <span className="font-serif text-4xl text-yellow-500">
               {price.toLocaleString()}đ
