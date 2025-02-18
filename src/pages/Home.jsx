@@ -98,8 +98,8 @@ const Home = () => {
           className="absolute -top-17 -right-63 w-96 scale-x-[-1]"
         />
       </div>
-      <div className="relative z-10 container mx-auto flex flex-col items-center justify-between space-y-20 py-20">
-        <div className="flex flex-col items-center justify-center space-y-3 px-80 text-center">
+      <div className="relative z-10 mx-auto flex flex-col items-center justify-between space-y-20 py-20">
+        <div className="container flex flex-col items-center justify-center space-y-3 px-72 text-center">
           <div className="text-xl tracking-widest text-black uppercase">
             Giới thiệu
           </div>
@@ -119,7 +119,7 @@ const Home = () => {
           </div>
           <Button className="mt-2">Xem thêm</Button>
         </div>
-        <div className="relative flex flex-col items-center justify-center px-80 text-center">
+        <div className="relative container flex flex-col items-center justify-center px-72 text-center">
           <img src={bg2} alt="Product" className="w-full" />
           <div className="absolute -bottom-1/2 z-0 flex items-center justify-center">
             <div className="bg-white p-20">
@@ -142,7 +142,7 @@ const Home = () => {
                 </div>
                 <div className="w-96 text-left">
                   <p className="text-xl text-black uppercase">
-                    Rượu nho năm 1978
+                    Rượu nho năm 1987
                   </p>
                   <img src={separatorLeft} alt="Separator" className="w-14" />
                   <p className="font-jost mt-5 text-3xl font-light text-yellow-500">
@@ -178,7 +178,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="mt-70 flex flex-col items-center justify-center space-y-3 px-80 text-center">
+        <div className="container mt-70 flex flex-col items-center justify-center space-y-3 text-center">
           <div className="text-xl tracking-widest text-black uppercase">
             Sản phẩm mới
           </div>
@@ -197,7 +197,7 @@ const Home = () => {
           ))}
         </div>
 
-        <div className="mt-8 flex flex-col items-center justify-center space-y-3 px-80 text-center">
+        <div className="container mt-8 flex flex-col items-center justify-center space-y-3 text-center">
           <div className="text-xl tracking-widest text-black uppercase">
             Sản phẩm bán chạy
           </div>
@@ -205,7 +205,7 @@ const Home = () => {
           <ProductSlider products={products} />
         </div>
 
-        <div className="mt-8 grid grid-cols-3 gap-6 px-80 text-center">
+        <div className="container mt-8 grid grid-cols-3 gap-6 px-72 text-center">
           <div className="col-span-2 flex flex-col items-center">
             <div className="text-xl tracking-widest text-black uppercase">
               Tin tức & Blog
