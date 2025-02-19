@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header>
       <div className="border-b border-gray-200 bg-white text-gray-400">
-        <div className="container mx-auto flex items-center justify-between px-80">
+        <div className="container mx-auto flex items-center justify-between px-64">
           <nav>
             <ul className="flex space-x-2 text-xs">
               <li>
@@ -62,7 +62,7 @@ const Header = () => {
       </div>
 
       <div className="bg-black text-white">
-        <div className="container mx-auto flex items-center justify-between px-80">
+        <div className="container mx-auto flex items-center justify-between px-64">
           <div className="flex flex-col items-center justify-center py-2 text-2xl font-bold text-yellow-500">
             <img src={logo} alt="Logo" className="h-24" />
           </div>
