@@ -99,7 +99,7 @@ const Home = () => {
         />
       </div>
       <div className="relative z-10 mx-auto flex flex-col items-center justify-between space-y-20 py-20">
-        <div className="container flex flex-col items-center justify-center space-y-3 px-72 text-center">
+        <div className="container flex flex-col items-center justify-center space-y-3 px-64 text-center">
           <div className="text-xl tracking-widest text-black uppercase">
             Giới thiệu
           </div>
@@ -119,7 +119,7 @@ const Home = () => {
           </div>
           <Button className="mt-2">Xem thêm</Button>
         </div>
-        <div className="relative container flex flex-col items-center justify-center px-72 text-center">
+        <div className="relative container flex flex-col items-center justify-center px-64 text-center">
           <img src={bg2} alt="Product" className="w-full" />
           <div className="absolute -bottom-1/2 z-0 flex items-center justify-center">
             <div className="bg-white p-20">
@@ -205,7 +205,7 @@ const Home = () => {
           <ProductSlider products={products} />
         </div>
 
-        <div className="container mt-8 grid grid-cols-3 gap-6 px-72 text-center">
+        <div className="container mt-8 grid grid-cols-3 gap-6 px-64 text-center">
           <div className="col-span-2 flex flex-col items-center">
             <div className="text-xl tracking-widest text-black uppercase">
               Tin tức & Blog
