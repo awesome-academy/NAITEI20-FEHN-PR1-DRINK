@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -13,6 +14,12 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@theme {
+  --font-jost: "Jost", serif;
+  --font-roboto: "Roboto", serif;
+  --font-great-vibes: "Great Vibes", serif;
 }
 
 @layer utilities {
