@@ -141,7 +141,7 @@ const ProductPage = () => {
 
   return (
     <div className="mx-auto flex flex-col items-center justify-between gap-6 bg-white text-gray-500">
-      <nav className="container mt-6 px-72 text-sm text-gray-600">
+      <nav className="container mt-6 px-64 text-sm text-gray-600">
         <Link to="/" className="text-gray-500 hover:text-black">
           Trang chủ
         </Link>{" "}
@@ -152,7 +152,7 @@ const ProductPage = () => {
         </Link>{" "}
         /<span className="text-yellow-500"> Rượu vang đỏ</span>
       </nav>
-      <div className="container flex gap-6 px-72">
+      <div className="container flex gap-6 px-64">
         <div className="flex gap-2 border border-gray-200">
           <div className="flex flex-col items-center space-y-2 border-r border-gray-200 px-2 py-4">
             <button
@@ -296,7 +296,7 @@ const ProductPage = () => {
           </div>
         </div>
       </div>
-      <div className="container mt-6 flex justify-between gap-8 px-72">
+      <div className="container mt-6 flex justify-between gap-8 px-64">
         <div className="flex w-2/3 gap-6">
           {/* Tabs */}
           <div className="flex w-full flex-col">
