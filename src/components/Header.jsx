@@ -186,7 +186,7 @@ const Header = () => {
                 </a>
               </li>
               <li className="flex h-full items-center hover:text-yellow-500">
-                <a href="#" className="tracking-wider uppercase">
+                <a href="/blogs" className="tracking-wider uppercase">
                   Blog
                 </a>
               </li>
