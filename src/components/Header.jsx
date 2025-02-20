@@ -75,7 +75,7 @@ const Header = () => {
                 </a>
               </li>
               <li className="group relative flex h-full items-center hover:text-yellow-500">
-                <a href="#" className="tracking-wider uppercase">
+                <a href="/products" className="tracking-wider uppercase">
                   Rượu vang đỏ
                 </a>
                 {/* Submenu with 5-column grid */}
@@ -179,7 +179,7 @@ const Header = () => {
                 </a>
               </li>
               <li className="flex h-full items-center hover:text-yellow-500">
-                <a href="#" className="tracking-wider uppercase">
+                <a href="/blogs" className="tracking-wider uppercase">
                   Blog
                 </a>
               </li>
