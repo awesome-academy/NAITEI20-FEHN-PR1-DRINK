@@ -30,20 +30,22 @@ const SignUp = () => {
 
   return (
     <div className="mx-auto flex flex-col items-center gap-6 bg-white text-gray-500">
-      <nav className="container mt-6 px-64 text-sm text-gray-600">
+      <nav className="container mt-6 px-4 text-sm text-gray-600 md:px-64">
         <Link to="/" className="text-gray-500 hover:text-black">
           Trang chủ
         </Link>
         / <span className="text-yellow-500">Đăng ký</span>
       </nav>
-      <div className="container mb-4 flex justify-between px-64">
+      <div className="container mb-4 flex justify-between px-4 md:px-64">
         <div>
           <h1 className="mb-1 text-2xl text-gray-800 uppercase">Đăng ký</h1>
           <img src={separatorLeft} alt="Separator" className="w-18" />
         </div>
-        <Button size="lg" onClick={() => navigate("/sign-in")}>Đăng nhập</Button>
+        <Button size="lg" onClick={() => navigate("/sign-in")}>
+          Đăng nhập
+        </Button>
       </div>
-      <div className="container flex w-full justify-center px-64">
+      <div className="container flex w-full justify-center px-4 md:px-64">
         <form
           onSubmit={handleSubmit}
           className="w-full border border-gray-300 px-12 py-10 text-gray-800"
@@ -59,7 +61,7 @@ const SignUp = () => {
               name="firstName"
               value={formData.firstName}
               onChange={handleChange}
-              className="w-9/10 border border-gray-300 p-0.5"
+              className="w-7/10 border border-gray-300 p-0.5 md:w-9/10"
               required
             />
           </div>
@@ -71,7 +73,7 @@ const SignUp = () => {
               name="lastName"
               value={formData.lastName}
               onChange={handleChange}
-              className="w-9/10 border border-gray-300 p-0.5"
+              className="w-7/10 border border-gray-300 p-0.5 md:w-9/10"
               required
             />
           </div>
@@ -83,7 +85,7 @@ const SignUp = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-9/10 border border-gray-300 p-0.5"
+              className="w-7/10 border border-gray-300 p-0.5 md:w-9/10"
               required
             />
           </div>
@@ -95,12 +97,12 @@ const SignUp = () => {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="w-9/10 border border-gray-300 p-0.5"
+              className="w-7/10 border border-gray-300 p-0.5 md:w-9/10"
               required
             />
           </div>
 
-          <div className="mb-6 ml-auto flex w-9/10 items-center">
+          <div className="mb-6 ml-auto flex w-7/10 items-center md:w-9/10">
             <input
               type="checkbox"
               name="subscribe"
@@ -120,7 +122,7 @@ const SignUp = () => {
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
-              className="w-9/10 border border-gray-300 p-0.5"
+              className="w-7/10 border border-gray-300 p-0.5 md:w-9/10"
               required
             />
           </div>
@@ -134,13 +136,15 @@ const SignUp = () => {
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
-              className="ml-4 w-9/10 border border-gray-300 p-0.5"
+              className="ml-4 w-7/10 border border-gray-300 p-0.5 md:w-9/10"
               required
             />
           </div>
 
           <div className="flex justify-end gap-4">
-            <Button type="submit">GỬI</Button>
+            <a href="/sign-in">
+              <Button type="submit">GỬI</Button>
+            </a>
             <Button>QUAY LẠI</Button>
           </div>
         </form>

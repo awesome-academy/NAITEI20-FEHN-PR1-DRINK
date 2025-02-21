@@ -11,9 +11,9 @@ const Filter = ({
   onTagSelect,
 }) => {
   return (
-    <div className="w-64 pr-4 text-gray-700">
+    <div className="h-screen w-64 overflow-y-scroll pr-4 text-gray-700">
       {/* Danh mục sản phẩm */}
-      <h2 className="font-bold text-lg pb-2">DANH MỤC SẢN PHẨM</h2>
+      <h2 className="pb-2 text-lg font-bold">DANH MỤC SẢN PHẨM</h2>
       <div className="flex items-center gap-10">
         <img src={arrow} alt=" " className="flex-shrink-0" />
         <button
@@ -21,7 +21,7 @@ const Filter = ({
             onCategorySelect(null);
             onTagSelect(null);
           }}
-          className="flex items-center gap-2 text-gray-400 cursor-pointer hover:text-yellow-500 hover:font-bold"
+          className="flex cursor-pointer items-center gap-2 text-gray-400 hover:font-bold hover:text-yellow-500"
         >
           <IoReload className="text-xl" />
           <span>Clear Filters</span>
@@ -35,22 +35,26 @@ const Filter = ({
               {category.subcategories.map((sub) => (
                 <li key={sub.name} className="text-sm">
                   <button
-                    className={`block w-full text-left cursor-pointer hover:text-yellow-500 ${
-                      selectedCategory === sub.name ? "text-yellow-500 font-semibold" : ""
+                    className={`block w-full cursor-pointer text-left hover:text-yellow-500 ${
+                      selectedCategory === sub.name
+                        ? "font-semibold text-yellow-500"
+                        : ""
                     }`}
                     onClick={() => onCategorySelect(sub.name)}
                   >
                     {sub.name} ({sub.count})
                   </button>
-                
+
                   {/* Hiển thị danh mục con nếu có */}
                   {sub.children && (
-                    <ul className="ml-4 mt-1 space-y-1 list-disc text-xs text-gray-600">
+                    <ul className="mt-1 ml-4 list-disc space-y-1 text-xs text-gray-600">
                       {sub.children.map((child) => (
                         <li key={child.name} className="pl-2">
                           <button
-                            className={`block -ml-2 w-full text-left cursor-pointer hover:text-yellow-500 ${
-                              selectedCategory === child.name ? "text-yellow-500 font-semibold" : ""
+                            className={`-ml-2 block w-full cursor-pointer text-left hover:text-yellow-500 ${
+                              selectedCategory === child.name
+                                ? "font-semibold text-yellow-500"
+                                : ""
                             }`}
                             onClick={() => onCategorySelect(child.name)}
                           >
@@ -68,20 +72,24 @@ const Filter = ({
       </ul>
 
       {/* So sánh sản phẩm */}
-      <h2 className="font-bold text-lg pb-2 mt-6">SO SÁNH SẢN PHẨM</h2>
+      <h2 className="mt-6 pb-2 text-lg font-bold">SO SÁNH SẢN PHẨM</h2>
       <img src={arrow} alt=" " />
-      <p className="mt-6 text-sm text-gray-500 mt-2">Bạn chưa có sản phẩm nào để so sánh</p>
+      <p className="mt-6 text-sm text-gray-500">
+        Bạn chưa có sản phẩm nào để so sánh
+      </p>
 
       {/* Tag sản phẩm */}
-      <h2 className="font-bold text-lg pb-2 mt-6">TAG SẢN PHẨM</h2>
+      <h2 className="mt-6 pb-2 text-lg font-bold">TAG SẢN PHẨM</h2>
       <img src={arrow} alt=" " />
       <div className="mt-6 flex flex-wrap gap-2">
         {prod_tags.map((tag) => (
-          <button key={tag} onClick={() => onTagSelect(tag)} className={`px-2 text-sm border
-            ${
+          <button
+            key={tag}
+            onClick={() => onTagSelect(tag)}
+            className={`border px-2 text-sm ${
               selectedTag === tag
-                ? "bg-yellow-500 text-white border-yellow-500"
-                : "border-gray-300 cursor-pointer hover:bg-gray-200"
+                ? "border-yellow-500 bg-yellow-500 text-white"
+                : "cursor-pointer border-gray-300 hover:bg-gray-200"
             }`}
           >
             {tag}

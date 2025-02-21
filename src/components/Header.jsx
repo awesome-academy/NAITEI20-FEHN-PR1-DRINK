@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
+import { FaBars, FaX } from "react-icons/fa6";
 import logo from "../assets/images/logo.png";
 import submenu from "../assets/images/submenu.jpg";
 
 const Header = () => {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleCategoryClick = (category) => {
     navigate(`/products?category=${encodeURIComponent(category)}`);
@@ -14,17 +16,23 @@ const Header = () => {
   return (
     <header>
       <div className="border-b border-gray-200 bg-white text-gray-400">
-        <div className="container mx-auto flex items-center justify-between px-64">
+        <div className="container mx-auto hidden items-center justify-between px-4 md:flex md:px-64">
           <nav>
             <ul className="flex space-x-2 text-xs">
               <li>
-                <a href="/profile" className="hover:text-yellow-500 hover:underline">
+                <a
+                  href="/profile"
+                  className="hover:text-yellow-500 hover:underline"
+                >
                   Tài khoản của tôi
                 </a>
               </li>
               <li className="text-gray-400">-</li>
               <li>
-                <a href="/orders" className="hover:text-yellow-500 hover:underline">
+                <a
+                  href="/orders"
+                  className="hover:text-yellow-500 hover:underline"
+                >
                   Trạng thái đơn hàng
                 </a>
               </li>
@@ -36,19 +44,28 @@ const Header = () => {
               </li>
               <li className="text-gray-400">-</li>
               <li>
-                <a href="/cart" className="hover:text-yellow-500 hover:underline">
+                <a
+                  href="/cart"
+                  className="hover:text-yellow-500 hover:underline"
+                >
                   Giỏ hàng
                 </a>
               </li>
               <li className="text-gray-400">-</li>
               <li>
-                <a href="/sign-in" className="hover:text-yellow-500 hover:underline">
+                <a
+                  href="/sign-in"
+                  className="hover:text-yellow-500 hover:underline"
+                >
                   Đăng nhập
                 </a>
               </li>
               <li className="text-gray-400">-</li>
               <li>
-                <a href="/sign-up" className="hover:text-yellow-500 hover:underline">
+                <a
+                  href="/sign-up"
+                  className="hover:text-yellow-500 hover:underline"
+                >
                   Đăng ký
                 </a>
               </li>
@@ -69,44 +86,78 @@ const Header = () => {
       </div>
 
       <div className="bg-black text-white">
-        <div className="container mx-auto flex items-center justify-between px-64">
+        <div className="container mx-auto flex items-center justify-between bg-black px-4 md:px-64">
           <div className="flex flex-col items-center justify-center py-2 text-2xl font-bold text-yellow-500">
             <img src={logo} alt="Logo" className="h-24" />
           </div>
 
-          <nav className="h-28">
-            <ul className="flex h-full space-x-8 text-xs">
-              <li className="flex h-full items-center hover:text-yellow-500">
+          {/* Hamburger Menu Button */}
+          <button
+            className="text-yellow-500 focus:outline-none md:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <FaX /> : <FaBars />}
+          </button>
+
+          {/* Navigation Menu */}
+          <nav
+            className={`absolute top-28 left-0 z-20 w-full bg-black transition-transform md:relative md:top-0 md:w-auto md:bg-transparent ${
+              isOpen ? "block" : "hidden"
+            } md:flex md:items-center`}
+          >
+            <ul className="flex flex-col text-center text-xs md:flex-row md:space-x-8 md:text-left">
+              <li className="py-2 hover:text-yellow-500 md:py-0">
                 <a href="/" className="tracking-wider uppercase">
                   Trang chủ
                 </a>
               </li>
-              <li className="group relative flex h-full items-center hover:text-yellow-500">
+
+              <li className="group relative py-2 hover:text-yellow-500 md:py-0">
                 <a href="/products" className="tracking-wider uppercase">
                   Rượu vang đỏ
                 </a>
                 {/* Submenu with 5-column grid */}
-                <div className="absolute top-full -left-40 z-20 hidden w-[800px] grid-cols-5 gap-4 border border-yellow-500 bg-white p-6 text-black group-hover:grid">
+                <div className="absolute top-16 -left-40 z-20 hidden w-[800px] grid-cols-5 gap-4 border border-yellow-500 bg-white p-6 text-black group-hover:grid">
                   {/* Category Columns (3 columns) */}
                   <div>
                     <h3 className="mb-2 font-bold uppercase">Rượu ngoại</h3>
                     <ul className="space-y-2 text-gray-600">
-                      <li className="hover:text-yellow-500 cursor-pointer" onClick={() => handleCategoryClick("Rượu Chivas")}>
+                      <li
+                        className="cursor-pointer hover:text-yellow-500"
+                        onClick={() => handleCategoryClick("Rượu Chivas")}
+                      >
                         Rượu Chivas
                       </li>
-                      <li className="hover:text-yellow-500 cursor-pointer" onClick={() => handleCategoryClick("Hàng độc - Rượu độc đáo")}>
+                      <li
+                        className="cursor-pointer hover:text-yellow-500"
+                        onClick={() =>
+                          handleCategoryClick("Hàng độc - Rượu độc đáo")
+                        }
+                      >
                         Hàng độc - Rượu độc đáo
                       </li>
-                      <li className="hover:text-yellow-500 cursor-pointer" onClick={() => handleCategoryClick("Johnnie Walker")}>
+                      <li
+                        className="cursor-pointer hover:text-yellow-500"
+                        onClick={() => handleCategoryClick("Johnnie Walker")}
+                      >
                         Johnnie Walker
                       </li>
-                      <li className="hover:text-yellow-500 cursor-pointer" onClick={() => handleCategoryClick("Rượu Whisky")}>
+                      <li
+                        className="cursor-pointer hover:text-yellow-500"
+                        onClick={() => handleCategoryClick("Rượu Whisky")}
+                      >
                         Rượu Whisky
                       </li>
-                      <li className="hover:text-yellow-500 cursor-pointer" onClick={() => handleCategoryClick("Rượu Remy Martin")}>
+                      <li
+                        className="cursor-pointer hover:text-yellow-500"
+                        onClick={() => handleCategoryClick("Rượu Remy Martin")}
+                      >
                         Rượu Remy Martin
                       </li>
-                      <li className="hover:text-yellow-500 cursor-pointer" onClick={() => handleCategoryClick("Rượu Glenmorangie")}>
+                      <li
+                        className="cursor-pointer hover:text-yellow-500"
+                        onClick={() => handleCategoryClick("Rượu Glenmorangie")}
+                      >
                         Rượu Glenmorangie
                       </li>
                     </ul>
@@ -168,31 +219,51 @@ const Header = () => {
                   </div>
                 </div>
                 {/* Triangle */}
-                <div className="absolute bottom-0 left-1/2 h-0 w-0 -translate-x-1/2 transform border-r-8 border-b-8 border-l-8 border-r-transparent border-b-yellow-500 border-l-transparent opacity-0 group-hover:opacity-100"></div>
+                <div className="absolute top-14 left-1/2 z-10 h-0 w-0 -translate-x-1/2 transform border-r-8 border-b-8 border-l-8 border-r-transparent border-b-yellow-500 border-l-transparent opacity-0 group-hover:opacity-100"></div>
               </li>
-              <li className="flex h-full items-center hover:text-yellow-500">
-                <a href="#" className="tracking-wider uppercase">
+              <li className="py-2 hover:text-yellow-500 md:py-0">
+                <a href="/products" className="tracking-wider uppercase">
                   Rượu trắng
                 </a>
               </li>
-              <li className="flex h-full items-center hover:text-yellow-500">
-                <a href="#" className="tracking-wider uppercase">
+              <li className="py-2 hover:text-yellow-500 md:py-0">
+                <a href="/products" className="tracking-wider uppercase">
                   Champagne
                 </a>
               </li>
-              <li className="flex h-full items-center hover:text-yellow-500">
+              <li className="py-2 hover:text-yellow-500 md:py-0">
                 <a href="/about" className="tracking-wider uppercase">
                   Thông tin
                 </a>
               </li>
-              <li className="flex h-full items-center hover:text-yellow-500">
+              <li className="py-2 hover:text-yellow-500 md:py-0">
                 <a href="/blogs" className="tracking-wider uppercase">
                   Blog
                 </a>
               </li>
-              <li className="flex h-full items-center hover:text-yellow-500">
+              <li className="py-2 hover:text-yellow-500 md:py-0">
                 <a href="/contact" className="tracking-wider uppercase">
                   Liên hệ
+                </a>
+              </li>
+              <li className="block py-2 hover:text-yellow-500 md:hidden md:py-0">
+                <a href="/profile" className="tracking-wider uppercase">
+                  Tài khoản của tôi
+                </a>
+              </li>
+              <li className="block py-2 hover:text-yellow-500 md:hidden md:py-0">
+                <a href="/orders" className="tracking-wider uppercase">
+                  Trạng thái đơn hàng
+                </a>
+              </li>
+              <li className="block py-2 hover:text-yellow-500 md:hidden md:py-0">
+                <a href="#" className="tracking-wider uppercase">
+                  Danh sách ưa thích
+                </a>
+              </li>
+              <li className="block py-2 hover:text-yellow-500 md:hidden md:py-0">
+                <a href="/cart" className="tracking-wider uppercase">
+                  Giỏ hàng
                 </a>
               </li>
             </ul>
