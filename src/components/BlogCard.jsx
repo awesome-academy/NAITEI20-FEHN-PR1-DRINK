@@ -8,7 +8,7 @@ const ExpandableText = ({ text }) => {
   return (
     <div>
       <p
-        className={`italic leading-6 text-gray-500 ${isExpanded ? "" : "line-clamp-8"}`}
+        className={`leading-6 text-gray-500 italic ${isExpanded ? "" : "line-clamp-8"}`}
       >
         {text}
       </p>
@@ -22,13 +22,13 @@ const ExpandableText = ({ text }) => {
   );
 };
 
-const BlogCard = ({ blog, size = "medium" }) => {
+const BlogCard = ({ blog, size = "md" }) => {
   if (!blog) return null;
 
-  const validSizes = ["small", "medium", "large"];
+  const validSizes = ["sm", "md", "lg", "home"];
 
   if (!validSizes.includes(size)) {
-    size = "medium";
+    size = "md";
   }
 
   const navigate = useNavigate();
@@ -36,10 +36,10 @@ const BlogCard = ({ blog, size = "medium" }) => {
     navigate(`/blog/${blog.id}`);
   };
 
-  if (size === "small") {
+  if (size === "sm") {
     return (
       <div
-        className="group flex w-64 cursor-pointer text-sm"
+        className="group flex w-full cursor-pointer text-sm md:w-64"
         onClick={handleNavigate}
       >
         <div className="relative flex-1">
@@ -54,8 +54,8 @@ const BlogCard = ({ blog, size = "medium" }) => {
           </div>
         </div>
 
-        <div className="flex-2 ml-4 text-left">
-          <h3 className="mb-2 line-clamp-2 uppercase tracking-wider text-black group-hover:text-yellow-500">
+        <div className="ml-4 flex-2 text-left">
+          <h3 className="mb-2 line-clamp-2 tracking-wider text-black uppercase group-hover:text-yellow-500">
             {blog.title}
           </h3>
           <p className="flex items-center text-gray-300">
@@ -66,7 +66,7 @@ const BlogCard = ({ blog, size = "medium" }) => {
     );
   }
 
-  if (size === "medium") {
+  if (size === "md") {
     return (
       <div
         className="group relative max-w-sm overflow-hidden"
@@ -74,7 +74,7 @@ const BlogCard = ({ blog, size = "medium" }) => {
       >
         <div className="relative cursor-pointer">
           <img
-            className="h-60 w-full object-cover"
+            className="h-52 w-full object-cover"
             src={blog.image}
             alt="Thumb"
           />
@@ -88,15 +88,15 @@ const BlogCard = ({ blog, size = "medium" }) => {
           </div>
         </div>
 
-        <div className="py-2 text-left">
-          <div className="hover mb-1 line-clamp-1 cursor-pointer text-xl uppercase tracking-wider text-black transition duration-300 group-hover:text-yellow-500">
+        <div className="mt-2 py-2 text-left text-sm">
+          <div className="hover mb-1 line-clamp-1 cursor-pointer text-lg tracking-wider text-black uppercase transition duration-300 group-hover:text-yellow-500">
             {blog.title}
           </div>
           <p className="mb-1 text-gray-300">
             Đăng bởi {blog.author} | {blog.date} | {blog.commentsCount} bình
             luận
           </p>
-          <p className="line-clamp-4 text-base leading-6 text-gray-600">
+          <p className="line-clamp-4 leading-5.5 text-gray-600">
             {blog.description}
           </p>
           <p className="cursor-pointer text-yellow-500">Read more</p>
@@ -105,21 +105,21 @@ const BlogCard = ({ blog, size = "medium" }) => {
     );
   }
 
-  if (size === "large") {
+  if (size === "lg") {
     return (
-      <div className="w-200 group relative overflow-hidden text-lg">
+      <div className="group relative w-full overflow-hidden text-base md:w-200 md:text-lg">
         <div className="relative">
           <img
-            className="h-120 w-full object-cover"
+            className="h-60 w-full object-cover md:h-120"
             src={blog.image}
             alt="Thumb"
           />
         </div>
         <div className="my-8 text-left">
-          <h3 className="my-4 text-3xl uppercase tracking-wider text-black">
+          <h3 className="my-4 text-xl tracking-wider text-black uppercase md:text-3xl">
             {blog.title}
           </h3>
-          <p className="my-4 text-xl text-gray-300">
+          <p className="my-4 text-gray-300 md:text-xl">
             Đăng bởi {blog.author} | {blog.date} | {blog.commentsCount} bình
             luận
           </p>

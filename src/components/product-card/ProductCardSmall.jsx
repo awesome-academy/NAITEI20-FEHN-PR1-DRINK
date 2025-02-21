@@ -11,7 +11,15 @@ const tagColors = {
   Hot: "bg-red-500",
 };
 
-const ProductCardSmall = ({ id, tag, image, name, price, oldPrice, displayTag = true }) => {
+const ProductCardSmall = ({
+  id,
+  tag,
+  image,
+  name,
+  price,
+  oldPrice,
+  displayTag = true,
+}) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -24,13 +32,13 @@ const ProductCardSmall = ({ id, tag, image, name, price, oldPrice, displayTag = 
 
   return (
     <div
-      className="relative w-60 p-2 bg-white overflow-hidden group flex flex-col items-center cursor-pointer"
+      className="group relative flex w-60 cursor-pointer flex-col items-center overflow-hidden bg-white p-2"
       onClick={handleClick}
       data-id={id}
     >
       {displayTag && tag && (
         <div className="absolute top-0 left-0 z-10">
-          <div className="relative w-20 h-20">
+          <div className="relative h-20 w-20">
             <div
               className={`absolute h-0 w-0 border-t-[60px] border-l-[60px] border-solid border-transparent ${tagColors[tag]} rotate-[90deg] border-t-white`}
             ></div>
@@ -45,7 +53,10 @@ const ProductCardSmall = ({ id, tag, image, name, price, oldPrice, displayTag = 
       )}
 
       {/* Product Image */}
-      <div className="relative mt-2 flex h-60 w-full items-center justify-center overflow-hidden">
+      <a
+        href={`products/${id}`}
+        className="relative mt-2 flex h-60 w-full items-center justify-center overflow-hidden"
+      >
         <img
           src={image}
           alt={name}
@@ -61,16 +72,17 @@ const ProductCardSmall = ({ id, tag, image, name, price, oldPrice, displayTag = 
           </div>
           <BsArrowsAngleContract className="cursor-pointer hover:text-white" />
         </div>
-      </div>
+      </a>
 
       {/* Product Info */}
-      <div className="text-center mt-4">
-        <p
-          className="text-sm font-medium text-gray-800 group-hover:text-yellow-500 transition-none cursor-pointer uppercase overflow-hidden line-clamp-1"
+      <div className="mt-4 text-center">
+        <a
+          href={`products/${id}`}
+          className="w-full cursor-pointer overflow-hidden text-left text-sm font-medium text-ellipsis whitespace-nowrap text-gray-800 uppercase transition-none group-hover:text-yellow-500"
           title={name}
         >
           {name}
-        </p>
+        </a>
         <div className="mt-1">
           <span className="text-lg text-yellow-500">
             {price.toLocaleString()}đ
@@ -83,9 +95,10 @@ const ProductCardSmall = ({ id, tag, image, name, price, oldPrice, displayTag = 
         </div>
       </div>
 
-      <Button className="mt-4" 
+      <Button
+        className="mt-4"
         onClick={(e) => {
-        e.stopPropagation();
+          e.stopPropagation();
         }}
       >
         ADD TO CART
