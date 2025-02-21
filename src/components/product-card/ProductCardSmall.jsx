@@ -10,11 +10,19 @@ const tagColors = {
   Hot: "bg-red-500",
 };
 
-const ProductCardSmall = ({ tag, image, name, price, oldPrice }) => {
+const ProductCardSmall = ({
+  id,
+  tag,
+  image,
+  name,
+  price,
+  oldPrice,
+  displayTag = true,
+}) => {
   return (
-    <div className="group relative flex w-60 flex-col items-center justify-center overflow-hidden bg-white p-2">
-      {tag && (
-        <div className="absolute top-0 left-0 z-20">
+    <div className="group relative flex w-60 flex-col items-center overflow-hidden bg-white p-2">
+      {displayTag && tag && (
+        <div className="absolute top-0 left-0 z-10">
           <div className="relative h-20 w-20">
             <div
               className={`absolute h-0 w-0 border-t-[60px] border-l-[60px] border-solid border-transparent ${tagColors[tag]} rotate-[90deg] border-t-white`}
@@ -30,7 +38,10 @@ const ProductCardSmall = ({ tag, image, name, price, oldPrice }) => {
       )}
 
       {/* Product Image */}
-      <div className="relative mt-2 flex h-60 w-full items-center justify-center overflow-hidden">
+      <a
+        href={`products/${id}`}
+        className="relative mt-2 flex h-60 w-full items-center justify-center overflow-hidden"
+      >
         <img
           src={image}
           alt={name}
@@ -46,13 +57,17 @@ const ProductCardSmall = ({ tag, image, name, price, oldPrice }) => {
           </div>
           <BsArrowsAngleContract className="cursor-pointer hover:text-white" />
         </div>
-      </div>
+      </a>
 
       {/* Product Info */}
-      <div className="mt-2 text-center">
-        <p className="text-sm font-medium text-gray-800 transition-colors duration-300 group-hover:text-yellow-500">
+      <div className="mt-4 text-center">
+        <a
+          href={`products/${id}`}
+          className="w-full cursor-pointer overflow-hidden text-left text-sm font-medium text-ellipsis whitespace-nowrap text-gray-800 uppercase transition-none group-hover:text-yellow-500"
+          title={name}
+        >
           {name}
-        </p>
+        </a>
         <div className="mt-1">
           <span className="text-lg text-yellow-500">
             {price.toLocaleString()}đ
