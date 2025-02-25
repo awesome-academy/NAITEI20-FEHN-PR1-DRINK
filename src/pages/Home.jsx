@@ -24,6 +24,7 @@ import { Button } from "../components/Button";
 import BlogCard from "../components/BlogCard";
 import ProductSlider from "../components/ProductSlider";
 import CustomerSlider from "../components/CustomerSlider";
+import PopUp from "../components/PopUp";
 
 import { FaQuoteRight } from "react-icons/fa";
 import { blogs } from "../data/dummyData";
@@ -87,6 +88,7 @@ const Home = () => {
 
   return (
     <div className="relative overflow-hidden bg-white text-gray-500">
+      <PopUp />
       <div className="absolute inset-0 z-0 flex">
         <img
           src={bg1}

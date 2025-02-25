@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import BlogCard from "../components/BlogCard";
@@ -35,7 +35,12 @@ const BlogDetail = () => {
     <div className="container mx-auto p-4">
       <ToastContainer />  
       <div className="mb-6">
-        <p className="text-gray-600 text-sm mb-4">Trang chủ / <span className="text-yellow-500">Blog</span></p>
+        <nav className="text-sm text-gray-600 mb-4">
+          <Link to="/" className="text-gray-500 hover:text-black">
+            Trang chủ
+          </Link>{" "}
+          / <span className="text-yellow-500">Blog</span>
+        </nav>
       </div>
       <p className="font-medium text-2xl pb-2 uppercase text-gray-700">Blog</p>
       <img src={arrow} alt=" " className="mb-6"/>

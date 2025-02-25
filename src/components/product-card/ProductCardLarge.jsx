@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "../Button";
 import { FaHeart } from "react-icons/fa";
 import { SiGoogleanalytics } from "react-icons/si";
+import { useCart } from "../../context/CartContext.jsx"; 
 
 const ProductCardLarge = ({id, image, name, price, description }) => {
   const navigate = useNavigate();
@@ -14,7 +15,13 @@ const ProductCardLarge = ({id, image, name, price, description }) => {
       console.error("Product ID is undefined");
     }
   };
-  
+
+  const { addToCart } = useCart(); // Lấy hàm addToCart từ context
+
+  const handleAddToCart = (e) => {
+    e.stopPropagation();
+    addToCart({ id, name, image, price });
+  };
   return (
     <div 
       className="flex w-160 p-4 gap-5 bg-white group" 
@@ -42,11 +49,7 @@ const ProductCardLarge = ({id, image, name, price, description }) => {
         </div>
         {/* Button */}
         <div className="flex gap-5 items-center mt-5">
-          <Button
-            onClick={(e) => {
-              e.stopPropagation();
-              }}
-          >ADD TO CART</Button>
+          <Button onClick={handleAddToCart}>ADD TO CART</Button>
           <div className="flex items-center gap-2 cursor-pointer text-gray-500 hover:text-black">
             <FaHeart /> <span className="text-xs">Yêu thích</span>
           </div>
