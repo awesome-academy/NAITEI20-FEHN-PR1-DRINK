@@ -1,5 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
+
+@tailwind utilities;
 
 :root {
   font-family: "Noto Serif", serif;
@@ -18,10 +20,66 @@
 
 @theme {
   --font-jost: "Jost", serif;
+  --font-roboto: "Roboto", serif;
+  --font-great-vibes: "Great Vibes", serif;
 }
 
 @layer utilities {
   .clip-path-triangle {
     clip-path: polygon(100% 100%, 0% 100%, 100% 0%);
+  }
+}
+
+@layer utilities {
+  .menu-item {
+    @apply relative flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium;
+  }
+  .menu-item-active {
+    @apply bg-yellow-50 text-yellow-500 dark:bg-yellow-500/[0.12] dark:text-yellow-400;
+  }
+  .menu-item-inactive {
+    @apply text-gray-700 group-hover:text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/5 dark:hover:text-gray-300;
+  }
+  .menu-item-icon {
+    @apply text-gray-500 group-hover:text-gray-700 dark:text-gray-400;
+  }
+  .menu-item-icon-active {
+    @apply text-yellow-500 dark:text-yellow-400;
+  }
+  .menu-item-icon-size svg {
+    @apply size-6;
+  }
+  .menu-item-icon-inactive {
+    @apply text-gray-500 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300;
+  }
+
+  .menu-item-arrow {
+    @apply relative;
+  }
+  .menu-item-arrow-active {
+    @apply rotate-180 text-yellow-500 dark:text-yellow-400;
+  }
+  .menu-item-arrow-inactive {
+    @apply text-gray-500 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300;
+  }
+
+  .menu-dropdown-item {
+    @apply relative flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium;
+  }
+  .menu-dropdown-item-active {
+    @apply bg-yellow-50 text-yellow-500 dark:bg-yellow-500/[0.12] dark:text-yellow-400;
+  }
+  .menu-dropdown-item-inactive {
+    @apply text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/5;
+  }
+
+  .menu-dropdown-badge {
+    @apply block rounded-full px-2.5 py-0.5 text-xs font-medium text-yellow-500 uppercase dark:text-yellow-400;
+  }
+  .menu-dropdown-badge-active {
+    @apply bg-yellow-100 dark:bg-yellow-500/20;
+  }
+  .menu-dropdown-badge-inactive {
+    @apply bg-yellow-50 group-hover:bg-yellow-100 dark:bg-yellow-500/15 dark:group-hover:bg-yellow-500/20;
   }
 }
