@@ -86,7 +86,7 @@ export default function NotificationDropdown() {
             >
               <span className="relative z-1 block h-10 w-full max-w-10 items-center justify-center rounded-full bg-gray-100">
                 <FaUser className="absolute top-1/2 left-1/2 size-6 -translate-x-1/2 -translate-y-1/2 transform" />
-                <span className="bg-success-500 absolute right-0 bottom-0 z-10 h-2.5 w-full max-w-2.5 rounded-full border-[1.5px] border-white dark:border-gray-900"></span>
+                <span className="absolute right-0 bottom-0 z-10 h-2.5 w-full max-w-2.5 rounded-full border-[1.5px] border-white bg-green-500 dark:border-gray-900"></span>
               </span>
 
               <span className="block">
@@ -111,7 +111,7 @@ export default function NotificationDropdown() {
             >
               <span className="relative z-1 block h-10 w-full max-w-10 items-center justify-center rounded-full bg-gray-100">
                 <FaUser className="absolute top-1/2 left-1/2 size-6 -translate-x-1/2 -translate-y-1/2 transform" />
-                <span className="bg-success-500 absolute right-0 bottom-0 z-10 h-2.5 w-full max-w-2.5 rounded-full border-[1.5px] border-white dark:border-gray-900"></span>
+                <span className="absolute right-0 bottom-0 z-10 h-2.5 w-full max-w-2.5 rounded-full border-[1.5px] border-white bg-green-500 dark:border-gray-900"></span>
               </span>
 
               <span className="block">
@@ -136,7 +136,7 @@ export default function NotificationDropdown() {
             >
               <span className="relative z-1 block h-10 w-full max-w-10 items-center justify-center rounded-full bg-gray-100">
                 <FaUser className="absolute top-1/2 left-1/2 size-6 -translate-x-1/2 -translate-y-1/2 transform" />
-                <span className="bg-success-500 absolute right-0 bottom-0 z-10 h-2.5 w-full max-w-2.5 rounded-full border-[1.5px] border-white dark:border-gray-900"></span>
+                <span className="absolute right-0 bottom-0 z-10 h-2.5 w-full max-w-2.5 rounded-full border-[1.5px] border-white bg-green-500 dark:border-gray-900"></span>
               </span>
 
               <span className="block">
@@ -161,7 +161,7 @@ export default function NotificationDropdown() {
             >
               <span className="relative z-1 block h-10 w-full max-w-10 items-center justify-center rounded-full bg-gray-100">
                 <FaUser className="absolute top-1/2 left-1/2 size-6 -translate-x-1/2 -translate-y-1/2 transform" />
-                <span className="bg-success-500 absolute right-0 bottom-0 z-10 h-2.5 w-full max-w-2.5 rounded-full border-[1.5px] border-white dark:border-gray-900"></span>
+                <span className="absolute right-0 bottom-0 z-10 h-2.5 w-full max-w-2.5 rounded-full border-[1.5px] border-white bg-green-500 dark:border-gray-900"></span>
               </span>
 
               <span className="block">
@@ -186,7 +186,7 @@ export default function NotificationDropdown() {
             >
               <span className="relative z-1 block h-10 w-full max-w-10 items-center justify-center rounded-full bg-gray-100">
                 <FaUser className="absolute top-1/2 left-1/2 size-6 -translate-x-1/2 -translate-y-1/2 transform" />
-                <span className="bg-success-500 absolute right-0 bottom-0 z-10 h-2.5 w-full max-w-2.5 rounded-full border-[1.5px] border-white dark:border-gray-900"></span>
+                <span className="absolute right-0 bottom-0 z-10 h-2.5 w-full max-w-2.5 rounded-full border-[1.5px] border-white bg-green-500 dark:border-gray-900"></span>
               </span>
 
               <span className="block">
@@ -211,7 +211,7 @@ export default function NotificationDropdown() {
             >
               <span className="relative z-1 block h-10 w-full max-w-10 items-center justify-center rounded-full bg-gray-100">
                 <FaUser className="absolute top-1/2 left-1/2 size-6 -translate-x-1/2 -translate-y-1/2 transform" />
-                <span className="bg-success-500 absolute right-0 bottom-0 z-10 h-2.5 w-full max-w-2.5 rounded-full border-[1.5px] border-white dark:border-gray-900"></span>
+                <span className="absolute right-0 bottom-0 z-10 h-2.5 w-full max-w-2.5 rounded-full border-[1.5px] border-white bg-green-500 dark:border-gray-900"></span>
               </span>
 
               <span className="block">
