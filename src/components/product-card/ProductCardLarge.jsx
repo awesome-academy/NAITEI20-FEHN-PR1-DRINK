@@ -1,12 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Button } from "../Button";
+import { Button } from "../ui/button/Button";
 import { FaHeart } from "react-icons/fa";
 import { SiGoogleanalytics } from "react-icons/si";
 
-const ProductCardLarge = ({id, image, name, price, description }) => {
+const ProductCardLarge = ({ id, image, name, price, description }) => {
   const navigate = useNavigate();
-  
+
   const handleClick = () => {
     if (id) {
       navigate(`/products/${id}`);
@@ -14,45 +14,55 @@ const ProductCardLarge = ({id, image, name, price, description }) => {
       console.error("Product ID is undefined");
     }
   };
-  
+
   return (
-    <div 
-      className="flex w-160 p-4 gap-5 bg-white group" 
+    <div
+      className="group mb-2 flex w-full gap-5 bg-white p-1 md:w-160 md:p-4"
       onClick={handleClick}
       data-id={id}
     >
       {/* Product Image */}
-      <div className="w-50 h-70 flex justify-center items-center overflow-hidden cursor-pointer">
+      <div className="flex h-40 w-50 cursor-pointer justify-center overflow-hidden md:h-70">
         <img
           src={image}
           alt={name}
-          className="max-h-full p-4 max-w-full object-cover"
+          className="max-h-full max-w-full object-cover md:p-4"
         />
       </div>
-      <div className="w-96">
+      <div className="w-7/10 md:w-96">
         {/* Product Info */}
         <div className="text-left">
-          <p className="text-xl font-medium text-gray-800 group-hover:text-yellow-500 uppercase">{name}</p>
+          <p className="truncate text-base font-medium text-gray-800 uppercase group-hover:text-yellow-500 md:text-xl">
+            {name}
+          </p>
           <div className="mt-1">
-            <span className="font-serif text-4xl text-yellow-500">
+            <span className="font-serif text-lg text-yellow-500 md:text-4xl">
               {price.toLocaleString()}đ
             </span>
           </div>
-          <p className="text-sm text-gray-600 mt-2">{description}</p>
+          <p className="mt-2 line-clamp-3 text-xs text-gray-600 md:text-sm">
+            {description}
+          </p>
         </div>
         {/* Button */}
-        <div className="flex gap-5 items-center mt-5">
+        <div className="mt-5 flex flex-col items-center gap-5 md:flex-row">
           <Button
+            className="hidden md:block"
             onClick={(e) => {
               e.stopPropagation();
-              }}
-          >ADD TO CART</Button>
-          <div className="flex items-center gap-2 cursor-pointer text-gray-500 hover:text-black">
-            <FaHeart /> <span className="text-xs">Yêu thích</span>
+            }}
+          >
+            ADD TO CART
+          </Button>
+          <div className="flex gap-2">
+            <div className="flex cursor-pointer items-center gap-2 text-gray-500 hover:text-black">
+              <FaHeart /> <span className="text-xs">Yêu thích</span>
+            </div>
+            <div className="flex cursor-pointer items-center gap-2 text-gray-500 hover:text-black">
+              <SiGoogleanalytics /> <span className="text-xs">So sánh</span>
+            </div>
           </div>
-          <div className="flex items-center gap-2 cursor-pointer text-gray-500 hover:text-black">
-            <SiGoogleanalytics /> <span className="text-xs">So sánh</span>
-          </div>
+          <Button className="block w-full md:hidden">ADD TO CART</Button>
         </div>
       </div>
     </div>

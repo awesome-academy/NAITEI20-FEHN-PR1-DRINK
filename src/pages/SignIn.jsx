@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import separatorLeft from "../assets/images/titleleft-dark.png";
-import { Button } from "../components/Button";
+import { Button } from "../components/ui/button/Button";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -16,20 +16,22 @@ const SignIn = () => {
 
   return (
     <div className="mx-auto flex flex-col items-center justify-between gap-6 bg-white text-gray-500">
-      <nav className="container mt-6 px-64 text-sm text-gray-600">
+      <nav className="container mt-6 px-4 text-sm text-gray-600 md:px-64">
         <Link to="/" className="text-gray-500 hover:text-black">
           Trang chủ
         </Link>{" "}
         /<span className="text-yellow-500"> Đăng nhập</span>
       </nav>
-      <div className="container mb-4 flex justify-between px-64">
+      <div className="container mb-4 flex justify-between px-4 md:px-64">
         <div>
           <h1 className="mb-1 text-2xl text-gray-800 uppercase">Đăng nhập</h1>
           <img src={separatorLeft} alt="Separator" className="w-18" />
         </div>
-        <Button size="lg">Đăng ký</Button>
+        <a href="/sign-up">
+          <Button size="lg">Đăng ký</Button>
+        </a>
       </div>
-      <div className="container flex w-full justify-center px-64">
+      <div className="container flex w-full justify-center px-4 md:px-64">
         <form
           onSubmit={handleSubmit}
           className="w-full border border-gray-300 px-12 py-10 text-gray-800"
@@ -47,7 +49,7 @@ const SignIn = () => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-9/10 border border-gray-300 p-0.5"
+              className="w-7/10 border border-gray-300 p-0.5 md:w-9/10"
               required
             />
           </div>
@@ -58,12 +60,12 @@ const SignIn = () => {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-9/10 border border-gray-300 p-0.5"
+              className="w-7/10 border border-gray-300 p-0.5 md:w-9/10"
               required
             />
           </div>
 
-          <div className="mb-6 ml-auto flex w-9/10 items-center">
+          <div className="mb-6 ml-auto flex w-7/10 items-center md:w-9/10">
             <input
               type="checkbox"
               checked={remember}
@@ -72,8 +74,10 @@ const SignIn = () => {
             />
             <label className="text-xs">Quên mật khẩu</label>
           </div>
-          <div className="ml-auto w-9/10">
-            <Button type="submit">Đăng nhập</Button>
+          <div className="ml-auto w-7/10 md:w-9/10">
+            <a href="/">
+              <Button type="submit">Đăng nhập</Button>
+            </a>
           </div>
         </form>
       </div>
