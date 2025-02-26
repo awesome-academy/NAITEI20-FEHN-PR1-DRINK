@@ -20,7 +20,7 @@ import product6 from "../assets/products/6.jpg";
 import product7 from "../assets/products/7.jpg";
 import product8 from "../assets/products/8.jpg";
 
-import { Button } from "../components/Button";
+import { Button } from "../components/ui/button/Button";
 import BlogCard from "../components/BlogCard";
 import ProductSlider from "../components/ProductSlider";
 import CustomerSlider from "../components/CustomerSlider";

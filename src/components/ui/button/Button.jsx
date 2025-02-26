@@ -1,6 +1,6 @@
 import React from "react";
 import { cva } from "class-variance-authority";
-import { cn } from "../lib/utils";
+import { cn } from "../../../lib/utils";
 
 const buttonVariants = cva(
   "cursor-pointer inline-flex items-center justify-center whitespace-nowrap text-xs font-medium tracking-wider uppercase transition-colors shadow-sm bg-black text-white hover:bg-yellow-500",

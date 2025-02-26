@@ -9,8 +9,11 @@ import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
 import About from "../pages/About";
 import NotFound from "../pages/404";
+import Users from "../pages/admin/Users";
+import UserDetails from "../pages/admin/UserDetails";
 
-import Layout from "../components/Layout";
+import Layout from "../layout/Layout";
+import AdminLayout from "../layout/AdminLayout";
 import ScrollToTop from "../components/ScrollToTop";
 
 const AppRoutes = () => {
@@ -28,6 +31,15 @@ const AppRoutes = () => {
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/about" element={<About />} />
+        </Route>
+
+        <Route element={<AdminLayout />}>
+          <Route index path="/admin" />
+          <Route index path="/admin/users" element={<Users />} />
+          <Route index path="/admin/users/:id" element={<UserDetails />} />
+          <Route index path="/admin/categories" />
+          <Route index path="/admin/products" />
+          <Route index path="/admin/orders" />
         </Route>
 
         <Route path="*" element={<NotFound />} />

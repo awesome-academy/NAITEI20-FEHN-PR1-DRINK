@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Pagination from "../Pagination";
-import { Button } from "../Button";
+import { Button } from "../ui/button/Button";
 import { commentsData } from "../../data/dummyData";
 
 const CommentList = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Button } from "../Button";
+import { Button } from "../ui/button/Button";
 import { FaHeart } from "react-icons/fa";
 import { SiGoogleanalytics } from "react-icons/si";
 import { BsArrowsAngleContract } from "react-icons/bs";

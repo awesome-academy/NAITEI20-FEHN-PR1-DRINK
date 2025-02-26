@@ -14,7 +14,7 @@ import card1 from "../assets/images/card1.png";
 import card2 from "../assets/images/card2.png";
 import card3 from "../assets/images/card3.png";
 import card4 from "../assets/images/card4.png";
-import { Button } from "./Button";
+import { Button } from "./ui/button/Button";
 
 const Footer = () => {
   return (

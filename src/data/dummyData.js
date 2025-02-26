@@ -1,6 +1,129 @@
 import thumb from "../assets/images/thumb.jpg";
 import blog from "../assets/images/blog.jpg";
 
+export const users = [
+  {
+    id: 1,
+    last_name: "Nguyen",
+    first_name: "An",
+    email: "an.nguyen@example.com",
+    phone_number: "+84901234567",
+    company: "VietTech",
+    address: "123 Đường Lê Lợi",
+    city: "Hà Nội",
+    country: "Vietnam",
+    zip_code: "100000",
+  },
+  {
+    id: 2,
+    last_name: "Tran",
+    first_name: "Binh",
+    email: "binh.tran@example.com",
+    phone_number: "+84987654321",
+    company: "Sun*",
+    address: "456 Đường Nguyễn Trãi",
+    city: "Hồ Chí Minh",
+    country: "Vietnam",
+    zip_code: "700000",
+  },
+  {
+    id: 3,
+    last_name: "Le",
+    first_name: "Cuong",
+    email: "cuong.le@example.com",
+    phone_number: "+84905556677",
+    company: "FPT Software",
+    address: "789 Đường Hai Bà Trưng",
+    city: "Đà Nẵng",
+    country: "Vietnam",
+    zip_code: "550000",
+  },
+  {
+    id: 4,
+    last_name: "Hoang",
+    first_name: "Dung",
+    email: "dung.hoang@example.com",
+    phone_number: "+84903334455",
+    company: "VNPT",
+    address: "321 Đường Điện Biên Phủ",
+    city: "Cần Thơ",
+    country: "Vietnam",
+    zip_code: "900000",
+  },
+  {
+    id: 5,
+    last_name: "Pham",
+    first_name: "Em",
+    email: "em.pham@example.com",
+    phone_number: "+84902223344",
+    company: "Mobifone",
+    address: "654 Đường Lê Duẩn",
+    city: "Hải Phòng",
+    country: "Vietnam",
+    zip_code: "180000",
+  },
+  {
+    id: 6,
+    last_name: "Dang",
+    first_name: "Phong",
+    email: "phong.dang@example.com",
+    phone_number: "+84909998877",
+    company: "VinGroup",
+    address: "987 Đường Trần Phú",
+    city: "Nha Trang",
+    country: "Vietnam",
+    zip_code: "650000",
+  },
+  {
+    id: 7,
+    last_name: "Bui",
+    first_name: "Hai",
+    email: "hai.bui@example.com",
+    phone_number: "+84904445566",
+    company: "Techcombank",
+    address: "111 Đường Phạm Văn Đồng",
+    city: "Hà Nội",
+    country: "Vietnam",
+    zip_code: "100000",
+  },
+  {
+    id: 8,
+    last_name: "Vo",
+    first_name: "Hanh",
+    email: "hanh.vo@example.com",
+    phone_number: "+84901112233",
+    company: "ACB",
+    address: "222 Đường Hoàng Diệu",
+    city: "Hồ Chí Minh",
+    country: "Vietnam",
+    zip_code: "700000",
+  },
+  {
+    id: 9,
+    last_name: "Duong",
+    first_name: "Khoa",
+    email: "khoa.duong@example.com",
+    phone_number: "+84906667788",
+    company: "BIDV",
+    address: "333 Đường Lý Thường Kiệt",
+    city: "Đà Nẵng",
+    country: "Vietnam",
+    zip_code: "550000",
+  },
+  {
+    id: 10,
+    last_name: "To",
+    first_name: "Linh",
+    email: "linh.to@example.com",
+    phone_number: "+84905556699",
+    company: "VPBank",
+    address: "444 Đường Nguyễn Văn Cừ",
+    city: "Hải Phòng",
+    country: "Vietnam",
+    zip_code: "180000",
+  },
+];
+
 export const blogs = [
   {
     id: 1,
@@ -8,7 +131,8 @@ export const blogs = [
     author: "Duong",
     date: "2025-02-12",
     commentsCount: 60,
-    description: ` Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên
+    description:
+      ` Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên
     từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang Nổ Thăng Long
     tạo cảm giác hương phấn, êm dịu, vui tươi, sản phẩm được đóng chai
     dung tích 750 ml.`.repeat(10),
@@ -21,7 +145,10 @@ export const blogs = [
     author: "Hanh",
     date: "2025-02-10",
     commentsCount: 45,
-    description: `Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên.`.repeat(10),
+    description:
+      `Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên.`.repeat(
+        10,
+      ),
     image: blog,
     tag: "Wine",
   },
@@ -31,7 +158,8 @@ export const blogs = [
     author: "Minh",
     date: "2025-02-08",
     commentsCount: 30,
-    description: `Champagne Moët & Chandon có hương vị đặc trưng của sản phẩm lên men tự nhiên
+    description:
+      `Champagne Moët & Chandon có hương vị đặc trưng của sản phẩm lên men tự nhiên
     từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn..`.repeat(6),
     image: thumb,
     tag: "Champagne",
@@ -42,7 +170,8 @@ export const blogs = [
     author: "Linh",
     date: "2025-02-18",
     commentsCount: 22,
-    description: `Rượu vang Chile Santa Rita mang hương vị trái cây đậm đà, có hương vị đặc trưng của sản phẩm lên men tự nhiên
+    description:
+      `Rượu vang Chile Santa Rita mang hương vị trái cây đậm đà, có hương vị đặc trưng của sản phẩm lên men tự nhiên
     từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn...`.repeat(6),
     image: blog,
     tag: "Wine",
@@ -53,7 +182,8 @@ export const blogs = [
     author: "Nam",
     date: "2025-02-15",
     commentsCount: 50,
-    description: `Château Margaux - một trong những dòng vang Pháp cao cấp, có hương vị đặc trưng của sản phẩm lên men tự nhiên
+    description:
+      `Château Margaux - một trong những dòng vang Pháp cao cấp, có hương vị đặc trưng của sản phẩm lên men tự nhiên
     từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn...`.repeat(6),
     image: thumb,
     tag: "Wine",
@@ -64,7 +194,10 @@ export const blogs = [
     author: "Thu",
     date: "2025-02-11",
     commentsCount: 37,
-    description: `Amarone Della Valpolicella nổi tiếng với quy trình sản xuất đặc biệt, đem lại hương vị đậm đà..`.repeat(6),
+    description:
+      `Amarone Della Valpolicella nổi tiếng với quy trình sản xuất đặc biệt, đem lại hương vị đậm đà..`.repeat(
+        6,
+      ),
     image: blog,
     tag: "Vang",
   },
@@ -74,7 +207,8 @@ export const blogs = [
     author: "Trung",
     date: "2025-02-05",
     commentsCount: 80,
-    description: `Dom Pérignon - dòng champagne thượng hạng với có hương vị đặc trưng của sản phẩm lên men tự nhiên
+    description:
+      `Dom Pérignon - dòng champagne thượng hạng với có hương vị đặc trưng của sản phẩm lên men tự nhiên
     từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn...`.repeat(6),
     image: thumb,
     tag: "Champagne",
@@ -85,7 +219,8 @@ export const blogs = [
     author: "Huy",
     date: "2025-02-03",
     commentsCount: 25,
-    description: `Vang Rioja với có hương vị đặc trưng của sản phẩm lên men tự nhiên
+    description:
+      `Vang Rioja với có hương vị đặc trưng của sản phẩm lên men tự nhiên
     từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn...`.repeat(6),
     image: blog,
     tag: "Vang",
@@ -96,7 +231,10 @@ export const blogs = [
     author: "Lan",
     date: "2025-01-30",
     commentsCount: 15,
-    description: `Sauvignon Blanc từ New Zealand có hương thơm tươi mát, rất được ưa chuộng..`.repeat(6),
+    description:
+      `Sauvignon Blanc từ New Zealand có hương thơm tươi mát, rất được ưa chuộng..`.repeat(
+        6,
+      ),
     image: thumb,
     tag: "Wine",
   },
@@ -106,7 +244,8 @@ export const blogs = [
     author: "Long",
     date: "2025-01-28",
     commentsCount: 42,
-    description: `Penfolds Grange - biểu tượng của rượu vang Úc, sở hữu có hương vị đặc trưng của sản phẩm lên men tự nhiên
+    description:
+      `Penfolds Grange - biểu tượng của rượu vang Úc, sở hữu có hương vị đặc trưng của sản phẩm lên men tự nhiên
     từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn...`.repeat(6),
     image: blog,
     tag: "Wine",
@@ -117,7 +256,10 @@ export const blogs = [
     author: "Trang",
     date: "2025-01-25",
     commentsCount: 33,
-    description: `Veuve Clicquot mang đến trải nghiệm sảng khoái với bọt khí mịn màng..`.repeat(6),
+    description:
+      `Veuve Clicquot mang đến trải nghiệm sảng khoái với bọt khí mịn màng..`.repeat(
+        6,
+      ),
     image: thumb,
     tag: "Champagne",
   },
@@ -127,7 +269,8 @@ export const blogs = [
     author: "Quang",
     date: "2025-01-20",
     commentsCount: 20,
-    description: `Vang Malbec nổi bật với có hương vị đặc trưng của sản phẩm lên men tự nhiên
+    description:
+      `Vang Malbec nổi bật với có hương vị đặc trưng của sản phẩm lên men tự nhiên
     từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn...`.repeat(6),
     image: blog,
     tag: "Vang",
@@ -138,7 +281,10 @@ export const blogs = [
     author: "My",
     date: "2025-01-15",
     commentsCount: 18,
-    description: `Riesling từ Đức có hương thơm thanh thoát, vị chua cân bằng rất dễ uống..`.repeat(6),
+    description:
+      `Riesling từ Đức có hương thơm thanh thoát, vị chua cân bằng rất dễ uống..`.repeat(
+        6,
+      ),
     image: thumb,
     tag: "Wine",
   },
@@ -148,7 +294,10 @@ export const blogs = [
     author: "Hải",
     date: "2025-01-10",
     commentsCount: 28,
-    description: `Laurent-Perrier là dòng champagne nhẹ nhàng, phù hợp với mọi bữa tiệc..`.repeat(6),
+    description:
+      `Laurent-Perrier là dòng champagne nhẹ nhàng, phù hợp với mọi bữa tiệc..`.repeat(
+        6,
+      ),
     image: blog,
     tag: "Champagne",
   },
@@ -158,7 +307,10 @@ export const blogs = [
     author: "Vy",
     date: "2025-01-05",
     commentsCount: 12,
-    description: `Pinotage là dòng vang đặc trưng của Nam Phi với hương vị độc đáo..`.repeat(6),
+    description:
+      `Pinotage là dòng vang đặc trưng của Nam Phi với hương vị độc đáo..`.repeat(
+        6,
+      ),
     image: thumb,
     tag: "Vang",
   },
@@ -168,7 +320,10 @@ export const blogs = [
     author: "Dũng",
     date: "2025-01-02",
     commentsCount: 50,
-    description: `Krug Grande Cuvée - dòng champagne đẳng cấp, sở hữu hương vị phức tạp..`.repeat(6),
+    description:
+      `Krug Grande Cuvée - dòng champagne đẳng cấp, sở hữu hương vị phức tạp..`.repeat(
+        6,
+      ),
     image: blog,
     tag: "Champagne",
   },
@@ -178,7 +333,10 @@ export const blogs = [
     author: "Thảo",
     date: "2024-12-28",
     commentsCount: 55,
-    description: `Vang Napa Valley từ Mỹ có vị đậm đà, thích hợp với nhiều món ăn..`.repeat(6),
+    description:
+      `Vang Napa Valley từ Mỹ có vị đậm đà, thích hợp với nhiều món ăn..`.repeat(
+        6,
+      ),
     image: thumb,
     tag: "Vang",
   },
@@ -188,7 +346,8 @@ export const blogs = [
     author: "Phong",
     date: "2024-12-20",
     commentsCount: 22,
-    description: `Port Wine là dòng vang ngọt nổi tiếng, có vị nồng nàn..`.repeat(6),
+    description:
+      `Port Wine là dòng vang ngọt nổi tiếng, có vị nồng nàn..`.repeat(6),
     image: blog,
     tag: "Wine",
   },
@@ -198,7 +357,10 @@ export const blogs = [
     author: "Ngọc",
     date: "2024-12-15",
     commentsCount: 33,
-    description: `Taittinger nổi bật với hương vị trái cây tươi mát, phù hợp với khai vị..`.repeat(6),
+    description:
+      `Taittinger nổi bật với hương vị trái cây tươi mát, phù hợp với khai vị..`.repeat(
+        6,
+      ),
     image: thumb,
     tag: "Champagne",
   },
@@ -208,7 +370,8 @@ export const blogs = [
     author: "Bảo",
     date: "2024-12-10",
     commentsCount: 18,
-    description: `Assyrtiko là dòng vang trắng tươi mát, đặc trưng của Hy Lạp..`.repeat(6),
+    description:
+      `Assyrtiko là dòng vang trắng tươi mát, đặc trưng của Hy Lạp..`.repeat(6),
     image: blog,
     tag: "Wine",
   },

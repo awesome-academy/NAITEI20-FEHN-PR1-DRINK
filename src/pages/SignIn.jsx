@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import separatorLeft from "../assets/images/titleleft-dark.png";
-import { Button } from "../components/Button";
+import { Button } from "../components/ui/button/Button";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
