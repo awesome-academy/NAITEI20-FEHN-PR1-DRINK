@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { FaStar, FaRegStar } from "react-icons/fa";
 import { FaHeart, FaSignal, FaEnvelope } from "react-icons/fa";
@@ -33,69 +33,18 @@ import bg from "../assets/images/submenu.jpg";
 
 import { cn } from "../lib/utils";
 import ProductSlider from "../components/ProductSlider";
+import { products as dummyProducts } from "../data/dummyData";
 
 const ProductPage = () => {
+  const { id } = useParams();
   const product = {
-    name: "Rượu nho năm 1987",
-    price: 330000,
-    rating: 4,
-    reviews: 1,
+    ...dummyProducts.find((p) => p.id === parseInt(id)),
     colors: ["#e4af49", "#030102", "#9c0001"],
     sizes: ["Loại to", "Loại vừa", "Loại nhỏ"],
-    description:
-      "Một hợp chất có trong rượu vang được gọi là resveratro có khả năng làm tăng tuổi thọ. Resveratro còn có khả năng ngăn chặn mật độ oxy hóa của protein béo.",
   };
-
-  const products = [
-    {
-      image: product1,
-      name: "RƯỢU VANG ĐÀ LẠT",
-      price: 370000,
-      oldPrice: 450000,
-    },
-    {
-      image: product2,
-      name: "RƯỢU VANG ĐÀ LẠT",
-      price: 370000,
-      oldPrice: 450000,
-    },
-    {
-      image: product3,
-      name: "RƯỢU VANG ĐÀ LẠT",
-      price: 370000,
-      oldPrice: 450000,
-    },
-    {
-      image: product4,
-      name: "RƯỢU VANG ĐÀ LẠT",
-      price: 370000,
-      oldPrice: 450000,
-    },
-    {
-      image: product5,
-      name: "RƯỢU VANG ĐÀ LẠT",
-      price: 370000,
-      oldPrice: 450000,
-    },
-    {
-      image: product6,
-      name: "RƯỢU VANG ĐÀ LẠT",
-      price: 370000,
-      oldPrice: 450000,
-    },
-    {
-      image: product7,
-      name: "RƯỢU VANG ĐÀ LẠT",
-      price: 370000,
-      oldPrice: 450000,
-    },
-    {
-      image: product8,
-      name: "RƯỢU VANG ĐÀ LẠT",
-      price: 370000,
-      oldPrice: 450000,
-    },
-  ];
+  const products = dummyProducts
+    .filter((p) => p.id !== parseInt(id))
+    .slice(0, 8);
 
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
@@ -106,16 +55,7 @@ const ProductPage = () => {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maximexpedita, nostrum recusandae nobis rerum, quas reiciendis corrupticupiditate tempora mollitia alias adipisci est illo hic quod nisiexcepturi repellat molestias? Lorem ipsum dolor sit amet",
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maximexpedita, nostrum recusandae nobis rerum, quas reiciendis corrupticupiditate tempora mollitia alias adipisci est illo hic quod nisiexcepturi repellat molestias? Lorem ipsum dolor sit amet",
   ];
-  const images = [
-    product1,
-    product2,
-    product3,
-    product4,
-    product5,
-    product6,
-    product7,
-    product8,
-  ];
+  const images = [product.image, ...products.map((p) => p.image)];
   const [mainImage, setMainImage] = useState(images[2]);
   const [visibleIndex, setVisibleIndex] = useState(0);
 

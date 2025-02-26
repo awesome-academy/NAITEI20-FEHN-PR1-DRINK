@@ -188,22 +188,22 @@ export default function Users() {
                 <div className="grid grid-cols-1 gap-x-6 gap-y-5 lg:grid-cols-2">
                   <div>
                     <Label>Địa chỉ</Label>
-                    <Input type="text" value="123 Đường Lê Lợi" />
+                    <Input type="text" value={selectedUser?.address || ""} />
                   </div>
 
                   <div>
                     <Label>Thành phố</Label>
-                    <Input type="text" value="Hà Nội" />
+                    <Input type="text" value={selectedUser?.city || ""} />
                   </div>
 
                   <div>
                     <Label>Quốc gia</Label>
-                    <Input type="text" value="Vietnam" />
+                    <Input type="text" value={selectedUser?.country || ""} />
                   </div>
 
                   <div>
                     <Label>Postal/Zip Code</Label>
-                    <Input type="text" value="100000" />
+                    <Input type="text" value={selectedUser?.zip_code || ""} />
                   </div>
                 </div>
               </div>

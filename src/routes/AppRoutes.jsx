@@ -9,8 +9,11 @@ import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
 import About from "../pages/About";
 import NotFound from "../pages/404";
+import Dashboard from "../pages/admin/Dashboard";
 import Users from "../pages/admin/Users";
 import UserDetails from "../pages/admin/UserDetails";
+import OrdersAdmin from "../pages/admin/Orders";
+import OrderDetails from "../pages/admin/OrdersDetails ";
 
 import Layout from "../layout/Layout";
 import AdminLayout from "../layout/AdminLayout";
@@ -34,12 +37,13 @@ const AppRoutes = () => {
         </Route>
 
         <Route element={<AdminLayout />}>
-          <Route index path="/admin" />
+          <Route index path="/admin" element={<Dashboard />} />
           <Route index path="/admin/users" element={<Users />} />
           <Route index path="/admin/users/:id" element={<UserDetails />} />
           <Route index path="/admin/categories" />
           <Route index path="/admin/products" />
-          <Route index path="/admin/orders" />
+          <Route index path="/admin/orders" element={<OrdersAdmin />} />
+          <Route index path="/admin/orders/:id" element={<OrderDetails />} />
         </Route>
 
         <Route path="*" element={<NotFound />} />
