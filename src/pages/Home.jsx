@@ -26,6 +26,7 @@ import ProductSlider from "../components/ProductSlider";
 import CustomerSlider from "../components/CustomerSlider";
 
 import { FaQuoteRight } from "react-icons/fa";
+import { blogs } from "../data/dummyData";
 
 const Home = () => {
   const products = [
@@ -212,8 +213,9 @@ const Home = () => {
             </div>
             <img src={separator} alt="Separator" className="w-42" />
             <div className="mt-8 grid grid-cols-2 gap-6">
-              <BlogCard />
-              <BlogCard />
+              {blogs.slice(0, 2).map((blog) => (
+                <BlogCard key={blog.id} blog={blog} size="medium" />
+              ))}
             </div>
           </div>
           <div className="col-span-1 flex flex-col items-center">
