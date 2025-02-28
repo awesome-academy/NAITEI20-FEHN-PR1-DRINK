@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import BlogCard from "../components/BlogCard";
 import Pagination from "../components/Pagination";
 import { blogs } from "../data/dummyData";
@@ -15,10 +16,15 @@ const BlogList = () => {
   return (
     <div className="container mx-auto p-4">
       <div className="mb-6">
-        <p className="text-gray-600 text-sm mb-4">Trang chủ / <span className="text-yellow-500">Blog</span></p>
+        <nav className="text-sm text-gray-600 mb-4">
+          <Link to="/" className="text-gray-500 hover:text-black">
+            Trang chủ
+          </Link>{" "}
+          / <span className="text-yellow-500">Blog</span>
+        </nav>
+        <p className="uppercase text-black text-2xl mb-2">Blog</p>
+        <img src={arrow} alt=" " />
       </div>
-      <p className="font-medium text-2xl pb-2 uppercase text-gray-700">Blog</p>
-      <img src={arrow} alt=" " className="mb-6"/>
       
       {/* Grid hiển thị blog */}
       <div className="grid grid-cols-3 gap-6 space-y-2">

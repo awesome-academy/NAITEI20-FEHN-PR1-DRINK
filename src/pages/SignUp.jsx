@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import separatorLeft from "../assets/images/titleleft-dark.png";
 import { Button } from "../components/Button";
 
 const SignUp = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -40,7 +41,7 @@ const SignUp = () => {
           <h1 className="mb-1 text-2xl text-gray-800 uppercase">Đăng ký</h1>
           <img src={separatorLeft} alt="Separator" className="w-18" />
         </div>
-        <Button size="lg">Đăng nhập</Button>
+        <Button size="lg" onClick={() => navigate("/sign-in")}>Đăng nhập</Button>
       </div>
       <div className="container flex w-full justify-center px-64">
         <form

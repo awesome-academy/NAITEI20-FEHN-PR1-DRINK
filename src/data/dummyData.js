@@ -1,5 +1,105 @@
 import thumb from "../assets/images/thumb.jpg";
 import blog from "../assets/images/blog.jpg";
+import product1 from "../assets/products/1.jpg";
+import product2 from "../assets/products/2.jpg";
+import product3 from "../assets/products/3.jpg";
+import product4 from "../assets/products/4.jpg";
+import product5 from "../assets/products/5.jpg";
+import product6 from "../assets/products/6.jpg";
+import product7 from "../assets/products/7.jpg";
+import product8 from "../assets/products/8.jpg";
+import product9 from "../assets/products/9.jpg";
+import product10 from "../assets/products/10.jpg";
+import product11 from "../assets/products/11.jpg";
+import product12 from "../assets/products/12.jpg";
+import product13 from "../assets/products/13.jpg";
+import product14 from "../assets/products/14.jpg";
+
+const images = [
+  product1, product2, product3, product4, product5, product6, product7,
+  product8, product9, product10, product11, product12, product13, product14
+];
+
+export const prod_tags = ["Sale", "Mới", "Hot"];
+
+export const categories = [
+  {
+    name: "RƯỢU NGOẠI",
+    subcategories: [
+      { name: "Rượu Chivas", count: 26 },
+      { name: "Hàng độc - Rượu độc đáo", count: 36, children: [{ name: "Johnnie Walker", count: 46 }] },
+      { name: "Rượu Whisky", count: 24 },
+      { name: "Rượu Remy Martin", count: 16 },
+      { name: "Rượu Glenmorangie", count: 11 },
+      { name: "Rượu Ballantine's", count: 7 },
+      { name: "Rượu Cognac", count: 40 },
+      { name: "Rượu Vodka", count: 9 },
+      { name: "Rượu Macallan", count: 19 },
+      { name: "Rượu Brandy", count: 27 },
+      { name: "Rượu Hennessy", count: 20 },
+      { name: "RượuGin - Tequila - Liqueur - Rượu mùi", count: 36 },
+      { name: "Rượu Champagne", count: 12 },
+      { name: "Rượu Single malt Scotch whisky", count: 47 },
+      { name: "Rượu Spirits", count: 4 },
+    ],
+  },
+  {
+    name: "RƯỢU VANG",
+    subcategories: [
+      { name: "Rượu Vang Pháp", count: 44 },
+      { name: "Rượu Vang Úc", count: 34 },
+      { name: "Rượu Vang Mỹ", count: 16 },
+      { name: "Rượu Vang ChiLê", count: 48 },
+      { name: "Rượu Vang Philip", count: 1 },
+      { name: "Rượu Vang Nam Phi", count: 20 },
+      { name: "Rượu Vang Ý", count: 2 },
+    ],
+  },
+];
+
+const getRandomItem = (arr) => (arr.length > 0 ? arr[Math.floor(Math.random() * arr.length)] : null);
+
+const getRandomPrice = () => {
+  let price = Math.floor(Math.random() * 1000000) + 300000;
+  let oldPrice = price + Math.floor(Math.random() * 200000) + 50000;
+  return { price, oldPrice };
+};
+
+const createProduct = (id, name, category, subcategory, tag, image, price, oldPrice, description) => ({
+  id,
+  name,
+  category,
+  subcategory,
+  tag,
+  image,
+  price,
+  oldPrice,
+  description,
+});
+
+export const products = [];
+let productId = 1;
+categories.forEach((category) => {
+  category.subcategories.forEach((sub) => {
+    const numProducts = Math.floor(Math.random() * 5) + 5;
+    for (let i = 0; i < numProducts; i++) {
+      const { price, oldPrice } = getRandomPrice();
+      products.push(
+        createProduct(
+          productId++,
+          `${sub.name} Special ${i + 1}`,
+          category.name,
+          sub.name,
+          getRandomItem(prod_tags),
+          getRandomItem(images) || thumb, 
+          price,
+          oldPrice,
+          `Rượu ${sub.name} Special ${i + 1} mang đến hương vị ngọt ngào, kết hợp chút cay nồng và hương gỗ sồi.`
+        )
+      );
+    }
+  });
+});
 
 export const blogs = [
   {
@@ -227,3 +327,30 @@ export const commentsData = Array.from({ length: 10 }, (_, index) => ({
 }));
 
 export const tags = ["Wine", "Champagne", "Vang", "Độc đáo"];
+
+export const addressesData = [
+  {
+    id: 1,
+    name: "Giang",
+    lastName: "Lê Anh",
+    company: "Cổ phần công nghệ DKT",
+    address: "Tòa nhà Hà Nội Group, 442 Đội Cấn, Ba Đình, Hà Nội",
+    city: "Hà Nội",
+    country: "Việt Nam",
+    zip: "2300089",
+    phone: "0974554928",
+    isDefault: true,
+  },
+  {
+    id: 2,
+    name: "Trang",
+    lastName: "Anh",
+    company: "Cổ phần công nghệ DKT",
+    address: "Tòa nhà Hà Nội Group, 442 Đội Cấn, Ba Đình, Hà Nội",
+    city: "Hà Nội",
+    country: "Việt Nam",
+    zip: "2300089",
+    phone: "0974554928",
+    isDefault: false,
+  },
+];
