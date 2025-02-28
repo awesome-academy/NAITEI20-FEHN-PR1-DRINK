@@ -54,7 +54,7 @@ const ProductCardSmall = ({
 
       {/* Product Image */}
       <a
-        href={`products/${id}`}
+        href={`/products/${id}`}
         className="relative mt-2 flex h-60 w-full items-center justify-center overflow-hidden"
       >
         <img
@@ -77,7 +77,7 @@ const ProductCardSmall = ({
       {/* Product Info */}
       <div className="mt-4 text-center">
         <a
-          href={`products/${id}`}
+          href={`/products/${id}`}
           className="w-full cursor-pointer overflow-hidden text-left text-sm font-medium text-ellipsis whitespace-nowrap text-gray-800 uppercase transition-none group-hover:text-yellow-500"
           title={name}
         >

@@ -36,39 +36,104 @@ export const prod_tags = ["Sale", "Mới", "Hot"];
 
 export const categories = [
   {
-    name: "RƯỢU NGOẠI",
+    id: 1,
+    name: "RƯỢU VANG ĐỎ",
+    count: 529,
     subcategories: [
-      { name: "Rượu Chivas", count: 26 },
       {
-        name: "Hàng độc - Rượu độc đáo",
-        count: 36,
-        children: [{ name: "Johnnie Walker", count: 46 }],
+        id: 11,
+        name: "RƯỢU NGOẠI",
+        count: 364,
+        subcategories: [
+          { id: 111, name: "Rượu Chivas", count: 26, subcategories: [] },
+          {
+            id: 112,
+            name: "Hàng độc - Rượu độc đáo",
+            count: 36,
+            subcategories: [
+              {
+                id: 1121,
+                name: "Johnnie Walker",
+                count: 46,
+                subcategories: [
+                  {
+                    id: 11211,
+                    name: "Johnnie Walker Special",
+                    count: 20,
+                    subcategories: [],
+                  },
+                ],
+              },
+            ],
+          },
+          { id: 113, name: "Rượu Whisky", count: 24, subcategories: [] },
+          { id: 114, name: "Rượu Remy Martin", count: 16, subcategories: [] },
+          { id: 115, name: "Rượu Glenmorangie", count: 11, subcategories: [] },
+          { id: 116, name: "Rượu Ballantine's", count: 7, subcategories: [] },
+          { id: 117, name: "Rượu Cognac", count: 40, subcategories: [] },
+          { id: 118, name: "Rượu Vodka", count: 9, subcategories: [] },
+          { id: 119, name: "Rượu Macallan", count: 19, subcategories: [] },
+          { id: 120, name: "Rượu Brandy", count: 27, subcategories: [] },
+          { id: 121, name: "Rượu Hennessy", count: 20, subcategories: [] },
+          { id: 122, name: "Rượu Gin - Tequila - Liqueur - Rượu mùi", count: 36, subcategories: [] },
+          { id: 123, name: "Rượu Single Malt Scotch Whisky", count: 47, subcategories: [] },
+          { id: 124, name: "Rượu Spirits", count: 4, subcategories: [] },
+        ],
       },
-      { name: "Rượu Whisky", count: 24 },
-      { name: "Rượu Remy Martin", count: 16 },
-      { name: "Rượu Glenmorangie", count: 11 },
-      { name: "Rượu Ballantine's", count: 7 },
-      { name: "Rượu Cognac", count: 40 },
-      { name: "Rượu Vodka", count: 9 },
-      { name: "Rượu Macallan", count: 19 },
-      { name: "Rượu Brandy", count: 27 },
-      { name: "Rượu Hennessy", count: 20 },
-      { name: "RượuGin - Tequila - Liqueur - Rượu mùi", count: 36 },
-      { name: "Rượu Champagne", count: 12 },
-      { name: "Rượu Single malt Scotch whisky", count: 47 },
-      { name: "Rượu Spirits", count: 4 },
+      {
+        id: 12,
+        name: "RƯỢU VANG",
+        count: 165,
+        subcategories: [
+          {
+            id: 125,
+            name: "Rượu Vang Pháp",
+            count: 44,
+            subcategories: [
+              {
+                id: 1251,
+                name: "Vang Pháp Walker",
+                count: 46,
+                subcategories: [
+                  {
+                    id: 12511,
+                    name: "Vang Pháp Special",
+                    count: 20,
+                    subcategories: [],
+                  },
+                ],
+              },
+            ],
+          },
+          { id: 126, name: "Rượu Vang Úc", count: 34, subcategories: [] },
+          { id: 127, name: "Rượu Vang Mỹ", count: 16, subcategories: [] },
+          { id: 128, name: "Rượu Vang ChiLê", count: 48, subcategories: [] },
+          { id: 129, name: "Rượu Vang Philip", count: 1, subcategories: [] },
+          { id: 130, name: "Rượu Vang Nam Phi", count: 20, subcategories: [] },
+          { id: 131, name: "Rượu Vang Ý", count: 2, subcategories: [] },
+        ],
+      },
     ],
   },
   {
-    name: "RƯỢU VANG",
+    id: 2,
+    name: "RƯỢU TRẮNG",
+    count: 75,
     subcategories: [
-      { name: "Rượu Vang Pháp", count: 44 },
-      { name: "Rượu Vang Úc", count: 34 },
-      { name: "Rượu Vang Mỹ", count: 16 },
-      { name: "Rượu Vang ChiLê", count: 48 },
-      { name: "Rượu Vang Philip", count: 1 },
-      { name: "Rượu Vang Nam Phi", count: 20 },
-      { name: "Rượu Vang Ý", count: 2 },
+      { id: 201, name: "Rượu Trắng Pháp", count: 20, subcategories: [] },
+      { id: 202, name: "Rượu Trắng Ý", count: 15, subcategories: [] },
+      { id: 203, name: "Rượu Trắng Mỹ", count: 10, subcategories: [] },
+      { id: 204, name: "Rượu Trắng ChiLê", count: 30, subcategories: [] },
+    ],
+  },
+  {
+    id: 3,
+    name: "CHAMPAGNE",
+    count: 50,
+    subcategories: [
+      { id: 301, name: "Champagne Pháp", count: 25, subcategories: [] },
+      { id: 302, name: "Champagne Ý", count: 15, subcategories: [] },
+      { id: 303, name: "Champagne Tây Ban Nha", count: 10, subcategories: [] },
     ],
   },
 ];
@@ -106,25 +171,25 @@ const createProduct = (
 
 export const products = [];
 let productId = 1;
+
 categories.forEach((category) => {
-  category.subcategories.forEach((sub) => {
-    const numProducts = Math.floor(Math.random() * 5) + 5;
-    for (let i = 0; i < numProducts; i++) {
-      const { price, oldPrice } = getRandomPrice();
-      products.push(
-        createProduct(
-          productId++,
-          `${sub.name} Special ${i + 1}`,
-          category.name,
-          sub.name,
-          getRandomItem(prod_tags),
-          getRandomItem(images) || thumb,
+  category.subcategories.forEach((subcategory) => {
+    subcategory.subcategories.forEach((sub) => {
+      const numProducts = Math.floor(Math.random() * 5) + 5;
+      for (let i = 0; i < numProducts; i++) {
+        const { price, oldPrice } = getRandomPrice();
+        products.push({
+          id: productId++,
+          name: `${sub.name} Special ${i + 1}`,
+          category: sub.name,
+          tag: getRandomItem(prod_tags),
+          image: getRandomItem(images) || thumb,
           price,
           oldPrice,
-          `Rượu ${sub.name} Special ${i + 1} mang đến hương vị ngọt ngào, kết hợp chút cay nồng và hương gỗ sồi.`,
-        ),
-      );
-    }
+          description: `Rượu ${sub.name} Special ${i + 1} mang đến hương vị ngọt ngào, kết hợp chút cay nồng và hương gỗ sồi.`,
+        });
+      }
+    });
   });
 });
 
