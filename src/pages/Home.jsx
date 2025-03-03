@@ -27,11 +27,15 @@ import CustomerSlider from "../components/CustomerSlider";
 import PopUp from "../components/PopUp";
 
 import { FaQuoteRight } from "react-icons/fa";
+
+import { cn } from "../lib/utils";
+
 import { blogs } from "../data/dummyData";
 
 const Home = () => {
   const products = [
     {
+      id: 1,
       tag: "Sale",
       image: product1,
       name: "RƯỢU VANG ĐÀ LẠT",
@@ -39,6 +43,7 @@ const Home = () => {
       oldPrice: 450000,
     },
     {
+      id: 2,
       tag: "Mới",
       image: product2,
       name: "RƯỢU VANG ĐÀ LẠT",
@@ -46,6 +51,7 @@ const Home = () => {
       oldPrice: 450000,
     },
     {
+      id: 3,
       tag: "Hot",
       image: product3,
       name: "RƯỢU VANG ĐÀ LẠT",
@@ -53,30 +59,35 @@ const Home = () => {
       oldPrice: 450000,
     },
     {
+      id: 4,
       image: product4,
       name: "RƯỢU VANG ĐÀ LẠT",
       price: 370000,
       oldPrice: 450000,
     },
     {
+      id: 5,
       image: product5,
       name: "RƯỢU VANG ĐÀ LẠT",
       price: 370000,
       oldPrice: 450000,
     },
     {
+      id: 6,
       image: product6,
       name: "RƯỢU VANG ĐÀ LẠT",
       price: 370000,
       oldPrice: 450000,
     },
     {
+      id: 7,
       image: product7,
       name: "RƯỢU VANG ĐÀ LẠT",
       price: 370000,
       oldPrice: 450000,
     },
     {
+      id: 8,
       image: product8,
       name: "RƯỢU VANG ĐÀ LẠT",
       price: 370000,
@@ -98,11 +109,11 @@ const Home = () => {
         <img
           src={bg1}
           alt="Product 2"
-          className="absolute -top-17 -right-63 w-96 scale-x-[-1]"
+          className="absolute -top-17 -right-63 hidden w-96 scale-x-[-1] md:block"
         />
       </div>
-      <div className="relative z-10 mx-auto flex flex-col items-center justify-between space-y-20 py-20">
-        <div className="container flex flex-col items-center justify-center space-y-3 px-64 text-center">
+      <div className="relative z-10 mx-auto flex flex-col items-center justify-between space-y-20 pt-75 pb-10 md:py-20">
+        <div className="container flex flex-col items-center justify-center space-y-3 px-4 text-center md:px-64">
           <div className="text-xl tracking-widest text-black uppercase">
             Giới thiệu
           </div>
@@ -122,16 +133,16 @@ const Home = () => {
           </div>
           <Button className="mt-2">Xem thêm</Button>
         </div>
-        <div className="relative container flex flex-col items-center justify-center px-64 text-center">
+        <div className="relative container flex flex-col items-center justify-center text-center md:px-64">
           <img src={bg2} alt="Product" className="w-full" />
-          <div className="absolute -bottom-1/2 z-0 flex items-center justify-center">
-            <div className="bg-white p-20">
-              <div className="relative flex h-[400px] w-[600px] items-center justify-center">
+          <div className="absolute top-50 z-0 flex items-center justify-center md:-bottom-1/2">
+            <div className="bg-white px-10 py-5 md:p-20">
+              <div className="relative flex flex-col items-center justify-center px-10 md:h-[400px] md:w-[600px] md:flex-row md:px-0">
                 <div className="relative flex h-full w-full items-center justify-center overflow-hidden">
                   <img
                     src={product1}
                     alt="Product 1"
-                    className="mx-10 max-h-full max-w-full object-contain"
+                    className="h-full max-h-full w-full max-w-full object-contain"
                   />
                   <div className="absolute top-0 left-0">
                     <div className="relative h-20 w-20">
@@ -151,7 +162,7 @@ const Home = () => {
                   <p className="font-jost mt-5 text-3xl font-light text-yellow-500">
                     330.000<sup>đ</sup>
                   </p>
-                  <Button className="mt-5">ADD TO CART</Button>
+                  <Button className="mt-5 w-full md:w-fit">ADD TO CART</Button>
                   <p className="mt-4 text-xs">
                     Một hợp chất có trong rượu vang được gọi là reservatro có
                     khả năng làm tăng tối đa tuổi thọ. Resveratro còn có khả
@@ -181,7 +192,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="container mt-70 flex flex-col items-center justify-center space-y-3 text-center">
+        <div className="container mt-[850px] flex flex-col items-center justify-center space-y-3 text-center md:mt-70">
           <div className="text-xl tracking-widest text-black uppercase">
             Sản phẩm mới
           </div>
@@ -189,13 +200,16 @@ const Home = () => {
           <ProductSlider products={products} />
         </div>
 
-        <div className="mt-8 grid grid-cols-4 grid-rows-2">
+        <div className="mt-8 grid grid-cols-2 grid-rows-2 md:grid-cols-4">
           {gridImages.map((image, index) => (
             <img
               key={index}
               src={image}
               alt={`Product ${index + 1}`}
-              className="h-58 w-full object-cover transition duration-300 hover:border-4 hover:border-yellow-500"
+              className={cn(
+                "h-58 w-full object-cover transition duration-300 hover:border-4 hover:border-yellow-500",
+                index > 3 ? "hidden md:block" : "",
+              )}
             />
           ))}
         </div>
@@ -208,19 +222,19 @@ const Home = () => {
           <ProductSlider products={products} />
         </div>
 
-        <div className="container mt-8 grid grid-cols-3 gap-6 px-64 text-center">
+        <div className="container mt-8 flex flex-col gap-6 px-4 text-center md:grid md:grid-cols-3 md:px-64">
           <div className="col-span-2 flex flex-col items-center">
             <div className="text-xl tracking-widest text-black uppercase">
               Tin tức & Blog
             </div>
             <img src={separator} alt="Separator" className="w-42" />
-            <div className="mt-8 grid grid-cols-2 gap-6">
+            <div className="mt-8 flex flex-col gap-6 px-4 md:grid md:grid-cols-2 md:px-0">
               {blogs.slice(0, 2).map((blog) => (
-                <BlogCard key={blog.id} blog={blog} size="medium" />
+                <BlogCard key={blog.id} blog={blog} />
               ))}
             </div>
           </div>
-          <div className="col-span-1 flex flex-col items-center">
+          <div className="col-span-1 mt-8 flex flex-col items-center md:mt-0">
             <div className="text-xl tracking-widest text-black uppercase">
               Khách hàng
             </div>

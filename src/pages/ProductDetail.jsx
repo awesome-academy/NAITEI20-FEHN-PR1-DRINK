@@ -141,7 +141,7 @@ const ProductPage = () => {
 
   return (
     <div className="mx-auto flex flex-col items-center justify-between gap-6 bg-white text-gray-500">
-      <nav className="container mt-6 px-64 text-sm text-gray-600">
+      <nav className="container mt-6 px-4 text-sm text-gray-600 md:px-64">
         <Link to="/" className="text-gray-500 hover:text-black">
           Trang chủ
         </Link>{" "}
@@ -152,7 +152,7 @@ const ProductPage = () => {
         </Link>{" "}
         /<span className="text-yellow-500"> Rượu vang đỏ</span>
       </nav>
-      <div className="container flex gap-6 px-64">
+      <div className="container flex flex-col gap-6 px-4 md:flex-row md:px-64">
         <div className="flex gap-2 border border-gray-200">
           <div className="flex flex-col items-center space-y-2 border-r border-gray-200 px-2 py-4">
             <button
@@ -181,7 +181,11 @@ const ProductPage = () => {
               <IoMdArrowDown size={20} />
             </button>
           </div>
-          <img src={mainImage} alt="wine" className="w-64 md:w-96" />
+          <img
+            src={mainImage}
+            alt="wine"
+            className="w-full object-contain md:w-96"
+          />
         </div>
 
         <div className="flex-1">
@@ -236,7 +240,7 @@ const ProductPage = () => {
           {/* Quantity */}
           <div className="mt-4 flex flex-col">
             <p className="mb-2 text-gray-600">SỐ LƯỢNG</p>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col gap-4 md:flex-row md:items-center">
               <span className="flex h-7 w-28 items-center border-2 border-gray-200">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
@@ -252,7 +256,9 @@ const ProductPage = () => {
                   <FaPlus className="size-3" />
                 </button>
               </span>
-              <Button>ADD TO CART</Button>
+              <Button className="my-4 px-10 py-5 text-sm md:my-0 md:px-4 md:py-0.5 md:text-xs">
+                ADD TO CART
+              </Button>
             </div>
           </div>
 
@@ -296,15 +302,15 @@ const ProductPage = () => {
           </div>
         </div>
       </div>
-      <div className="container mt-6 flex justify-between gap-8 px-64">
-        <div className="flex w-2/3 gap-6">
+      <div className="container mt-6 flex flex-col justify-between gap-8 px-4 md:flex-row md:px-64">
+        <div className="flex w-full gap-6 md:w-2/3">
           {/* Tabs */}
           <div className="flex w-full flex-col">
-            <div className="flex">
+            <div className="flex text-sm md:text-base">
               <button
                 onClick={() => setActiveTab(0)}
                 className={cn(
-                  "px-4 py-1 tracking-wider uppercase",
+                  "w-1/3 px-4 py-1 tracking-wider uppercase md:w-fit",
                   activeTab === 0
                     ? "bg-yellow-500 text-white"
                     : "text-gray-500",
@@ -315,7 +321,7 @@ const ProductPage = () => {
               <button
                 onClick={() => setActiveTab(1)}
                 className={cn(
-                  "px-4 py-1 tracking-wider uppercase",
+                  "w-1/3 px-4 py-1 tracking-wider uppercase md:w-fit",
                   activeTab === 1
                     ? "bg-yellow-500 text-white"
                     : "text-gray-500",
@@ -326,7 +332,7 @@ const ProductPage = () => {
               <button
                 onClick={() => setActiveTab(2)}
                 className={cn(
-                  "px-4 py-1 tracking-wider uppercase",
+                  "w-1/3 px-4 py-1 tracking-wider uppercase md:w-fit",
                   activeTab === 2
                     ? "bg-yellow-500 text-white"
                     : "text-gray-500",
@@ -342,7 +348,7 @@ const ProductPage = () => {
             </div>
           </div>
         </div>
-        <div className="relative h-40 w-1/3">
+        <div className="relative h-40 w-full md:w-1/3">
           <img
             src={bg}
             alt="Product Image"

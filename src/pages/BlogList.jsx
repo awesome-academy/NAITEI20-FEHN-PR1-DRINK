@@ -14,22 +14,22 @@ const BlogList = () => {
   const currentBlogs = blogs.slice(indexOfFirstBlog, indexOfLastBlog);
 
   return (
-    <div className="container mx-auto p-4">
-      <div className="mb-6">
-        <nav className="text-sm text-gray-600 mb-4">
+    <div className="container mx-auto px-4 md:px-64">
+      <div className="my-6">
+        <nav className="mb-4 text-sm text-gray-600">
           <Link to="/" className="text-gray-500 hover:text-black">
             Trang chủ
           </Link>{" "}
           / <span className="text-yellow-500">Blog</span>
         </nav>
-        <p className="uppercase text-black text-2xl mb-2">Blog</p>
+        <p className="mb-2 text-2xl text-black uppercase">Blog</p>
         <img src={arrow} alt=" " />
       </div>
-      
+
       {/* Grid hiển thị blog */}
-      <div className="grid grid-cols-3 gap-6 space-y-2">
+      <div className="flex flex-col gap-6 space-y-2 md:grid md:grid-cols-3">
         {currentBlogs.map((blog) => (
-          <BlogCard key={blog.id} blog={blog} size="medium" />
+          <BlogCard key={blog.id} blog={blog} size="md" />
         ))}
       </div>
 

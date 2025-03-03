@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import ScrollToTop from "../components/ScrollToTop";
 import Home from "../pages/Home";
 import ProductList from "../pages/ProductList";
-import ProductDetail from "../pages/ProductDetail"
+import ProductDetail from "../pages/ProductDetail";
 import BlogList from "../pages/BlogList";
 import BlogDetail from "../pages/BlogDetail";
 import Cart from "../pages/Cart";
